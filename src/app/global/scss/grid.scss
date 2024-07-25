@@ -1,0 +1,25 @@
+// See Documentation on Grids here:
+// https: //dept-uk.atlassian.net/wiki/spaces/JOTUN/pages/8800623312228385268/JOT+-+50893+-+FS+Layouts+and+Widths
+// ---------------------------------------------------------------------------------------------------
+// Also remember to press shift+G when viewing files in Figma to see whether they follow a grid layout.
+
+.tw-grid-container {
+  @apply tw-container tw-grid tw-grid-cols-4 tw-gap-x-xs md:tw-grid-cols-6 md:tw-gap-x-md lg:tw-grid-cols-12;
+
+  // 6 columns on desktop
+  .tw-grid-component {
+    @apply tw-col-span-full md:tw-col-span-4 md:tw-col-start-2 lg:tw-col-span-8 lg:tw-col-start-3;
+
+    &-reduced-width {
+      @apply tw-col-span-full md:tw-col-span-4 md:tw-col-start-2 lg:tw-col-span-8 lg:tw-col-start-3 xl:tw-col-span-6 xl:tw-col-start-4;
+    }
+  }
+}
+
+.tw-component-spacing {
+  @apply tw-flex tw-flex-col tw-gap-y-[90px] xl:tw-gap-y-[120px];
+}
+
+.tw-component-padding {
+  @apply tw-pb-[90px] xl:tw-pb-[120px];
+}

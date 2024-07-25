@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add in other global @import types within ./scss here where necessary */
+@import './scss/grid.scss';
+
+@import './scss/typography.scss';
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .tw-no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .tw-no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.tooltip-arrow {
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 22px;
+    margin-left: -10px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #e6e6e6 transparent;
+  }
+}
+
+.cookie-footer-link #ot-sdk-btn.ot-sdk-show-settings
+{
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+
+  &:hover, &:focus {
+    color: inherit;
+    border: none;
+    background: none;
+  }
+}

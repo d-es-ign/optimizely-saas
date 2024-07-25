@@ -1,0 +1,120 @@
+.heading {
+  @apply tw-tracking-[-0.01em] tw-text-grey-100;
+}
+
+@mixin heading-21 {
+  @extend .heading;
+  @apply tw-font-sans tw-text-xl tw-font-light tw-tracking-[-0.005em];
+}
+
+@mixin heading-24 {
+  @extend .heading;
+  @apply tw-font-sans tw-text-2xl tw-font-light;
+}
+
+@mixin heading-28 {
+  @extend .heading;
+  @apply tw-font-serif tw-text-3xl;
+}
+
+@mixin heading-32 {
+  @extend .heading;
+  @apply tw-font-serif tw-text-4xl;
+}
+
+@mixin heading-36 {
+  @extend .heading;
+  @apply tw-font-serif tw-text-5xl;
+}
+
+@mixin heading-48 {
+  @extend .heading;
+  @apply tw-font-serif tw-text-7xl;
+}
+
+// See Wiki page for what we permit to be used in the rich-text editor for shared library components
+// https: //dev.azure.com/Jotun-SalesExcellense/JotunCom%20Optimizely/_wiki/wikis/JotunCom-Optimizely.wiki/793/Rich-Text
+.tw-rich-text {
+  h2 {
+    @include heading-32;
+
+    @screen md {
+      @include heading-36;
+    }
+
+    @screen xl {
+      @include heading-48;
+    }
+  }
+
+  h3 {
+    @include heading-28;
+
+    @screen md {
+      @include heading-32;
+    }
+
+    @screen xl {
+      @include heading-36;
+    }
+  }
+
+  h4 {
+    @include heading-24;
+
+    @screen md {
+      @include heading-28;
+    }
+
+    @screen xl {
+      @include heading-32;
+    }
+  }
+
+  h5 {
+    @include heading-21;
+
+    @screen md {
+      @include heading-24;
+    }
+  }
+
+  ol,
+  ul {
+    @apply tw-ml-8 tw-list-outside tw-text-sm tw-leading-sm;
+  }
+
+  li + li {
+    @apply tw-mt-1;
+  }
+
+  ol {
+    @apply tw-list-decimal;
+
+    ol {
+      @apply tw-ml-4 tw-mt-1 tw-list-[lower-alpha];
+    }
+  }
+
+  ul {
+    @apply tw-list-none;
+
+    li {
+      /* \2013 represents a slightly longer dash than the default - */
+      @apply tw-list-["\2013"] tw-pl-1;
+
+      ul {
+        /* regular disc style list is too large */
+        @apply tw-ml-3 tw-mt-1;
+
+        li {
+          @apply tw-list-['•'];
+        }
+      }
+    }
+  }
+
+  a {
+    @apply tw-underline tw-underline-offset-2;
+  }
+}
