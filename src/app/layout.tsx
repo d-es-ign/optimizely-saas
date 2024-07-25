@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 
 // Components
 import { MoseyBankHeader } from '@/components/header' //TODO: REMOVE DEMO COMPONENT
-import { MoseyBankFooter } from '@/components/footer' //TODO: REMOVE DEMO COMPONENT
 import { ThemeProvider, Body } from '@/components/theme'
 import Header from '../components/organisms/Header/Header'
 import headerData from '../utility/mocks/header.mocks';
@@ -12,6 +11,7 @@ import headerData from '../utility/mocks/header.mocks';
 // Styling
 import { Figtree } from "next/font/google"
 import "./global/index.scss"
+import MoseyBankFooter from "@/components/organisms/Footer/Footer"
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     {/* TODO: Use data from Optimizely */}
                     <Header {...headerData} animation={true}/>
                     {/* {children} */}
-                    {/* <MoseyBankFooter /> */}
+                    <MoseyBankFooter />
                 </div>
             </Body>
         </ThemeProvider>
