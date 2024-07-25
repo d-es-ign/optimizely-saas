@@ -16,10 +16,10 @@ import "./global/index.scss"
 const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    description: "An Optimizely demo website",
-    keywords: "Mosey bank, Mosey, Optimizely, Demo",
+    description: "An Optimizely demo for Jotun colour picker tool",
+    keywords: "Jotun, Colour picker, Optimizely",
     title: {
-        default: "Mosey Bank - An Optimizely Demo",
+        default: "Jotun colour picker - An Optimizely Demo",
         template: "%s - An Optimizely Demo"
     }
 };

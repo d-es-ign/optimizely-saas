@@ -41,7 +41,7 @@ export const ArticleListElement : CmsComponent<ArticleListElementDataFragment> =
                     <Card cardColor="white" as="article" className='w-full h-full' withHoverEffect>
                         <CmsImage src={ article.articleHeroImage } width={620} height={430} className='w-full rounded-[20px]' alt={ article.articleTitle ?? '' } />
                         <div className="flex justify-between mb-[16px]">
-                            <p className="text-[12px] text-pale-sky my-0">{ byLabel } { authors ? authors : 'Mosey Bank'}</p>
+                            <p className="text-[12px] text-pale-sky my-0">{ byLabel } { authors ? authors : 'Jotun'}</p>
                             <p className="text-[12px] text-pale-sky my-0"><DateDisplay value={ article.articleMeta?.published ?? null } /></p>
                         </div>
                         <h3 className="my-0 mt-[16px]">{ article?.articleTitle ?? ''}</h3>
