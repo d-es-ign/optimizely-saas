@@ -2,13 +2,16 @@ import { type PropsWithChildren } from "react"
 import type { Metadata } from "next"
 
 // Components
-import { MoseyBankHeader } from '@/components/header'
-import { MoseyBankFooter } from '@/components/footer'
+import { MoseyBankHeader } from '@/components/header' //TODO: REMOVE DEMO COMPONENT
+import { MoseyBankFooter } from '@/components/footer' //TODO: REMOVE DEMO COMPONENT
 import { ThemeProvider, Body } from '@/components/theme'
+import Header from '../components/organisms/Header/Header'
+import headerData from '../utility/mocks/header.mocks';
+
 
 // Styling
 import { Figtree } from "next/font/google"
-import "./globals.scss"
+import "./global/index.scss"
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -28,9 +31,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider value={{ theme: "system" }}>
             <Body className={`${figtree.className} bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}>
                 <div className="flex min-h-screen flex-col justify-between">
-                    <MoseyBankHeader />
-                    {children}
-                    <MoseyBankFooter />
+                    {/* TODO: Use data from Optimizely */}
+                    <Header {...headerData}/>
+                    {/* {children} */}
+                    {/* <MoseyBankFooter /> */}
                 </div>
             </Body>
         </ThemeProvider>
