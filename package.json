@@ -18,6 +18,7 @@
     "styles:list": "yarn opti-cms styles:list"
   },
   "dependencies": {
+    "@axe-core/react": "^4.9.1",
     "@emotion/is-prop-valid": "^1.2.2",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@headlessui/react": "^2.0.4",
@@ -27,6 +28,7 @@
     "@remkoj/optimizely-cms-nextjs": "^2.0.0-pre6",
     "@remkoj/optimizely-cms-react": "^2.0.0-pre6",
     "@remkoj/optimizely-graph-client": "^2.0.0-pre6",
+    "@testing-library/react": "^16.0.0",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "deepmerge": "^4.3.1",

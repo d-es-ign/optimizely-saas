@@ -1,6 +1,7 @@
-import BreakpointEnum from '@models/enums/BreakpointEnum';
-import Breakpoint from '@models/helpers/Breakpoint';
-import breakpoints from '@utility/config/breakpoints';
+
+import Breakpoint from '@/components/helpers/Breakpoint';
+import BreakpointEnum from '@/components/models/enums/BreakpointEnum';
+import breakpoints from '@/utility/config/breakpoints';
 import { useCallback, useEffect, useState } from 'react';
 
 const getCurrentBreakpoint = (): Breakpoint => {

@@ -1,4 +1,5 @@
-import { ITextContent } from '@models/ITextContent';
+import { ITextContent } from "@/components/models/ITextContent";
+
 
 export const textContent: ITextContent = {
   header: 'Title goes here',

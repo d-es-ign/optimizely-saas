@@ -1,4 +1,6 @@
-import { IAuthorBlock } from '@atoms/AuthorBlock/AuthorBlock';
+
+
+import { IAuthorBlock } from '../atoms/AuthorBlock/AuthorBlock';
 import { ILink } from './ILink';
 import SiteEnum from './enums/SiteEnum';
 

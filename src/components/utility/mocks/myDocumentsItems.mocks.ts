@@ -1,4 +1,5 @@
-import { IDocument } from '@models/IDocument';
+import { IDocument } from "@/components/models/IDocument";
+
 
 const rootFolders = [
   {

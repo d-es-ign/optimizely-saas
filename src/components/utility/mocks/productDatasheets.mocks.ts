@@ -1,4 +1,5 @@
-import IProductDatasheets from '@models/IProductDatasheets';
+
+ import IProductDatasheets from "@/components/models/IProductDatasheets";
 
 const productDatasheets: { products: IProductDatasheets[] } = {
   products: [

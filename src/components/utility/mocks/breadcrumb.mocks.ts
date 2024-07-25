@@ -1,4 +1,5 @@
-import { IBreadcrumb } from '@models/IBreadcrumb';
+import { IBreadcrumb } from "@/components/models/IBreadcrumb";
+
 
 const mockBreadcrumb: IBreadcrumb = {
   loading: false,

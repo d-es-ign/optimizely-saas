@@ -1,9 +1,13 @@
-import { IContentCards } from '@models/IContentCards';
-import DisplayStyleEnum from '@models/enums/DisplayStyleEnum';
-import VariantTypeEnum from '@models/enums/VariantTypeEnum';
+
+import DisplayStyleEnum from "@/components/models/enums/DisplayStyleEnum";
+import SiteEnum from "@/components/models/enums/SiteEnum";
+import VariantTypeEnum from "@/components/models/enums/VariantTypeEnum";
+import { IContentCards } from "@/components/models/IContentCards";
+
 
 const contentCards: IContentCards = {
   title: 'Select your industry',
+  site:SiteEnum.B2B,
   displayAs: DisplayStyleEnum.Carousel,
   cardStyle: VariantTypeEnum.Primary as Exclude<
     VariantTypeEnum,

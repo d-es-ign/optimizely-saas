@@ -1,4 +1,5 @@
-import { IDataSheets } from '@models/IDataSheets';
+import { IDataSheets } from "@/components/models/IDataSheets";
+
 
 export const dataSheetsMock: IDataSheets = {
   files: [

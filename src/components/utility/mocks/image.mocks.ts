@@ -1,4 +1,5 @@
-import { IImage } from '@models/IImage';
+import { IImage } from "@/components/models/IImage";
+
 
 export const image: IImage = {
   altText: 'image alt text',

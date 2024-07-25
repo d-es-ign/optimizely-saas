@@ -1,8 +1,12 @@
-import { IHeader } from '@models/IHeader';
+
+
+import { IHeader } from '@/components/models/IHeader';
 import image from './image.mocks';
+import SiteEnum from '@/components/models/enums/SiteEnum';
 
 export const header: IHeader = {
   accountLabel: 'account',
+  site:SiteEnum.B2B,
   accountMenu: {
     dashboardLink: {
       text: 'Dashboard',

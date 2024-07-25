@@ -1,4 +1,5 @@
-import SiteEnum from '@models/enums/SiteEnum';
+
+import SiteEnum from '@/components/models/enums/SiteEnum';
 import { useEffect, useState } from 'react';
 
 const useEnvironment = () => {

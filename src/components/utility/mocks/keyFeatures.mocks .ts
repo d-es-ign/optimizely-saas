@@ -1,4 +1,5 @@
-import { IconName } from '@models/IIcon';
+import { IconName } from "@/components/models/IIcon";
+
 
 export const keyFeaturesMock = [
   {

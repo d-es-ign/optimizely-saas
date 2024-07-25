@@ -1,4 +1,5 @@
-import { ITable, TableRow } from '@models/ITable';
+import { ITable, TableRow } from "@/components/models/ITable";
+
 
 const mockRows: TableRow[] = [
   {
