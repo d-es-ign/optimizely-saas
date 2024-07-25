@@ -1,4 +1,4 @@
-import Button from '../../atoms/Button/Button'';
+import Button from '../../atoms/Button/Button';
 import { ISocialLinks } from '../../models/ISocialLinks';
 
 const SocialLinks = ({ links }: ISocialLinks) => (
