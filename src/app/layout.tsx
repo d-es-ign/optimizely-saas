@@ -32,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Body className={`${figtree.className} bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}>
                 <div className="flex min-h-screen flex-col justify-between">
                     {/* TODO: Use data from Optimizely */}
-                    <Header {...headerData}/>
+                    <Header {...headerData} animation={true}/>
                     {/* {children} */}
                     {/* <MoseyBankFooter /> */}
                 </div>
