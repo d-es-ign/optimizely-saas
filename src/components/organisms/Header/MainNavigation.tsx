@@ -1,7 +1,7 @@
 import Icon from '../../atoms/Icon/Icon';
 import Text from '../../atoms/Text/Text';
-import { ILink } from 'models/ILink';
-import { INavigationItem } from 'models/INavigationItem';
+import { ILink } from '../../models/ILink';
+import { INavigationItem } from '../../models/INavigationItem';
 import classNames from 'classnames';
 import SubNavigation from './SubNavigation';
 import SiteEnum from '../../models/enums/SiteEnum';

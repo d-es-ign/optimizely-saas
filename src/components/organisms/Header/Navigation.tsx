@@ -2,8 +2,8 @@ import ConditionalWrapper from '../../atoms/ConditionalWrapper/ConditionalWrappe
 import Icon from '../../atoms/Icon/Icon';
 import Image from '../../atoms/Image/Image';
 import Text from '../../atoms/Text/Text';
-import { ILink } from 'models/ILink';
-import { INavigation, ISubNavigation } from 'models/INavigation';
+import { ILink } from '../../models/ILink';
+import { INavigation, ISubNavigation } from '../../models/INavigation';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ForwardedRef, MouseEventHandler, forwardRef, useState } from 'react';

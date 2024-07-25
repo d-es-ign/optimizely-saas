@@ -1,4 +1,4 @@
-import { TableDataFormat } from 'models/ITable';
+import { TableDataFormat } from '../../models/ITable';
 
 export type SortDirection = 'asc' | 'desc' | undefined;
 

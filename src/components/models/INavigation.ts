@@ -1,4 +1,4 @@
-import { ILink } from 'models/ILink';
+import { ILink } from '../models/ILink';
 import { IImage } from './IImage';
 import { INavigationItem } from './INavigationItem';
 import SiteEnum from './enums/SiteEnum';
