@@ -1,0 +1,1 @@
+declare module '@remkoj/optimizely-cms-nextjs/components';
