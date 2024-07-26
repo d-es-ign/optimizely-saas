@@ -1,0 +1,22 @@
+query getHeader {
+    menuItems: HeaderBlock(where: { _metadata: { status: { eq: "Published" } } }) {
+        items {
+            logo: site_logo {
+                ...ReferenceData
+            }
+            headerNavigation: site_main_navigation {
+                ...IContentData
+                ...MegaMenuGroupBlockData
+            }
+            utilityNavigation: site_utility_navigation {
+                ...IContentData
+                ...ButtonBlockData
+            }
+            featuredContentText: featured_content_text
+            secondaryLinks: secondary_links {
+                ...IContentData
+                ...ButtonBlockData
+            }
+        }
+    }
+}

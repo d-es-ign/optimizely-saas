@@ -6,7 +6,7 @@ import Script from "next/script";
 import { MoseyBankHeader } from "@/components/header"; //TODO: REMOVE DEMO COMPONENT
 import  { Footer } from "@/components/organisms/Footer/Footer"
 import { ThemeProvider, Body } from "@/components/theme";
-import Header from "../components/organisms/Header/Header";
+import Header from "../components/organisms/Header/index";
 import headerData from "../utility/mocks/header.mocks";
 
 // Styling
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <div className="flex min-h-screen flex-col justify-between">
               {/* TODO: Use data from Optimizely */}
-              <Header {...headerData} animation={true} />
+              <Header/>
               {/* {children} */}
               <Footer />
             </div>

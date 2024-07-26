@@ -170,10 +170,10 @@ const Navigation = forwardRef(
                         )}
                       >
                         <div className="tw-flex tw-w-full tw-flex-col tw-pb-xs">
-                          {secondaryLinks.map(({ text, url, target }) => (
+                          {secondaryLinks.map(({ text, url, target, link }) => (
                             <a
                               key={text}
-                              href={url}
+                              href={url || link?.default}
                               target={target}
                               className="tw-flex tw-items-center tw-gap-[5px] tw-border-t tw-border-grey-20 tw-px-[18px] tw-py-xxs md:tw-border-none md:tw-px-xxs"
                             >

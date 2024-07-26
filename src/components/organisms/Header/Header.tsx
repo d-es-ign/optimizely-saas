@@ -16,7 +16,7 @@ interface Props extends IHeader {
   readonly animation: boolean;
 }
 
-const Header = ({
+const HeaderNavigation = ({
   accountLabel,
   accountMenu,
   animation = true,
@@ -167,4 +167,4 @@ const Header = ({
   );
 };
 
-export default Header;
+export default HeaderNavigation;

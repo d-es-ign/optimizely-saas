@@ -5,4 +5,7 @@ export interface ILink {
   readonly url: string;
   readonly linkIcon?: IconName;
   readonly target?: string;
+  readonly link?: {
+    default: string
+  };
 }
