@@ -8,6 +8,8 @@ node_modules/
 dist/
 /.next/
 
+
+
 # Compiled Java class files
 *.class
 

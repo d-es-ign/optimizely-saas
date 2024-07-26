@@ -4,7 +4,7 @@ import Script from "next/script";
 
 // Components
 import { MoseyBankHeader } from "@/components/header"; //TODO: REMOVE DEMO COMPONENT
-import { MoseyBankFooter } from "@/components/footer"; //TODO: REMOVE DEMO COMPONENT
+import  { Footer } from "@/components/organisms/Footer/Footer"
 import { ThemeProvider, Body } from "@/components/theme";
 import Header from "../components/organisms/Header/Header";
 import headerData from "../utility/mocks/header.mocks";
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               {/* TODO: Use data from Optimizely */}
               <Header {...headerData} animation={true} />
               {/* {children} */}
-              {/* <MoseyBankFooter /> */}
+              <Footer />
             </div>
           </Body>
         </ThemeProvider>

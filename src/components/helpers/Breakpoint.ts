@@ -1,4 +1,5 @@
-import BreakpointEnum from "../enums/BreakpointEnum";
+import BreakpointEnum from "../models/enums/BreakpointEnum";
+
 
 
 type Breakpoint = `${BreakpointEnum}`;
