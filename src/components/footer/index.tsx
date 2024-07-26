@@ -1,5 +1,5 @@
-'use client'
-import { type OfficeLocationDataFragment, type MenuContentFragment, type Maybe } from '@/gql/graphql'
+
+import {  type MenuContentFragment, type Maybe } from '@/gql/graphql'
 import { getSdk } from '@/sdk'
 import { CmsLink, createListKey } from '@/components/shared/cms_link'
 import useBreakpoint from '@/hooks/ useBreakpoint'
@@ -18,7 +18,7 @@ export type FooterProps = {
 
 }
 
-export const MoseyBankFooter =  ({} : FooterProps) => {
+export const Footer =  ({} : FooterProps) => {
 
     const year = new Date().getFullYear();
  
@@ -200,7 +200,7 @@ const FooterMenu = ( {menu}: FooterMenuProps) =>
     </section>
 }
 
-export default MoseyBankFooter
+export default Footer
 
 
 

@@ -11,7 +11,7 @@ import headerData from '../utility/mocks/header.mocks';
 // Styling
 import { Figtree } from "next/font/google"
 import "./global/index.scss"
-import MoseyBankFooter from "@/components/organisms/Footer/Footer"
+import  { Footer } from "@/components/organisms/Footer/Footer"
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     {/* TODO: Use data from Optimizely */}
                     <Header {...headerData} animation={true}/>
                     {/* {children} */}
-                    <MoseyBankFooter />
+                    <Footer />
                 </div>
             </Body>
         </ThemeProvider>
