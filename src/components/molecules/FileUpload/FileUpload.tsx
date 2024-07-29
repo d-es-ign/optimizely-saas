@@ -80,7 +80,7 @@ const FileUpload = ({
 
         setStatus(response.ok ? FileStatuses.SUCCESS : FileStatuses.FAIL);
 
-        uploadCallback();
+        uploadCallback?.();
       } catch (error) {
         console.error(error);
         setStatus(FileStatuses.FAIL);
