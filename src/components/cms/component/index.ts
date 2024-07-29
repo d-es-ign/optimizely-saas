@@ -1,7 +1,7 @@
 // Auto generated dictionary
 import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import CardBlock from "./CardBlock";
-import OfficeLocation from "./OfficeLocation";
+import OfficeLocation from "./HomePageContent";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {

@@ -1,3 +1,4 @@
+'use client'
 import Image from '@/components/atoms/Image/Image';
 import Text from '@/components/atoms/Text/Text';
 import { IImageCard } from '@/components/models/IImageCard';

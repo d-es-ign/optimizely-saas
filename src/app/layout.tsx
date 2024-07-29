@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 // Components
-import { MoseyBankHeader } from "@/components/header"; //TODO: REMOVE DEMO COMPONENT
 import  { Footer } from "@/components/organisms/Footer/Footer"
 import { ThemeProvider, Body } from "@/components/theme";
 import Header from "../components/organisms/Header/index";
