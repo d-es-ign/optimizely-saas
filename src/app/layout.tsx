@@ -7,7 +7,6 @@ import { MoseyBankHeader } from "@/components/header"; //TODO: REMOVE DEMO COMPO
 import  { Footer } from "@/components/organisms/Footer/Footer"
 import { ThemeProvider, Body } from "@/components/theme";
 import Header from "../components/organisms/Header/index";
-import headerData from "../utility/mocks/header.mocks";
 
 // Styling
 import { Figtree } from "next/font/google";
@@ -36,12 +35,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en">
         <ThemeProvider value={{ theme: "system" }}>
           <Body
-            className={`${figtree.className} bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}
+            className={`${figtree.className} tw-overflow-x-hidden bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}
           >
             <div className="flex min-h-screen flex-col justify-between">
               {/* TODO: Use data from Optimizely */}
               <Header/>
-              {/* {children} */}
+              {children}
               <Footer />
             </div>
           </Body>

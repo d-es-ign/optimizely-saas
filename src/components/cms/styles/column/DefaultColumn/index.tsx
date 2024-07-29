@@ -5,7 +5,7 @@ import { type DefaultColumnProps } from "../displayTemplates"
 export const DefaultColumn : CmsLayoutComponent<DefaultColumnProps> = ({ layoutProps, children }) => {
     const tpl = layoutProps?.template ?? "none"
     const baseClasses : string[] = ['vb:column', 'vb:template:'+tpl, 'flex-1']
-    const cssClasses : string[] = ['flex', 'flex-col']
+    const cssClasses : string[] = ['tw-flex', 'tw-flex-col']
     const { 
         contentSpacing = 'none', 
         justifyContent = 'start', 
@@ -17,19 +17,19 @@ export const DefaultColumn : CmsLayoutComponent<DefaultColumnProps> = ({ layoutP
 
     switch (contentSpacing) {
         case 'small':
-            cssClasses.push('gap-2 py-2')
+            cssClasses.push('tw-px-sm tw-py-sm')
             break;
         case 'medium':
-            cssClasses.push('gap-4 py-4')
+            cssClasses.push('tw-px-md tw-py-md')
             break;
         case 'large':
-            cssClasses.push('gap-8 py-8 lg:gap-8 lg:py-8')
+            cssClasses.push('tw-px-lg tw-py-lg lg:tw-px-lg lg:tw-py-lg')
             break;
         case 'xl':
-            cssClasses.push('gap-12 py-12 lg:gap-24 lg:py-24')
+            cssClasses.push('tw-px-[48px] tw-py-[48px]')
             break;
         case 'xxl':
-            cssClasses.push('gap-16 py-16 lg:gap-72 lg:py-72')
+            cssClasses.push('tw-px-[72px] tw-py-[72px]')
             break;
         default:
             cssClasses.push('gap-0 py-0')
@@ -38,25 +38,25 @@ export const DefaultColumn : CmsLayoutComponent<DefaultColumnProps> = ({ layoutP
 
     switch (justifyContent) {
         case 'center':
-            cssClasses.push('justify-center')
+            cssClasses.push('tw-justify-center')
             break;
         case 'end':
-            cssClasses.push('justify-end')
+            cssClasses.push('tw-justify-end')
             break;
         default:
-            cssClasses.push('justify-start')
+            cssClasses.push('tw-justify-start')
             break;
     }
 
     switch (alignContent) {
         case 'center':
-            cssClasses.push('content-center')
+            cssClasses.push('tw-items-center')
             break;
         case 'end':
-            cssClasses.push('content-end')
+            cssClasses.push('tw-items-end')
             break;
         default:
-            cssClasses.push('content-start')
+            cssClasses.push('tw-items-start')
             break;
     }
 
