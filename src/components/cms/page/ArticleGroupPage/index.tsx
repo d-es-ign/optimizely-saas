@@ -18,7 +18,7 @@ export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> =
     const { factory } = getServerContext()
     const continueReading = await getLabel("Continue reading", { fallback: "Continue reading"})
 
-    return <div className="outer-padding">
+    return <div className="outer-padding main-content">
         <div className="mx-auto container">
             <div className="py-[32pt]">
                 <div className="max-w-prose text-center mb-[32pt] mx-auto">

@@ -1,3 +1,4 @@
+'use client'
 import Button from '@/components/atoms/Button/Button';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner/LoadingSpinner';
 import Text from '@/components/atoms/Text/Text';
@@ -21,7 +22,7 @@ export interface Props {
   readonly title?: string;
   readonly uploadDescription: string;
   readonly uploadedFileName: string;
-  readonly uploadCallback: () => void;
+  readonly uploadCallback?: () => void;
 }
 
 enum FileStatuses {
