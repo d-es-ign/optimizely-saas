@@ -6,7 +6,7 @@ import { getSdk } from '@/sdk'
 export const BlankExperience : OptimizelyNextPage<BlankExperienceDataFragment> = ({ data }) => 
 {
     const composition = (data as ExperienceDataFragment).composition as Maybe<ICompositionNode>
-    return <CmsEditable as="main" cmsFieldName="unstructuredData" className="flex-grow overflow-x-hidden">
+    return <CmsEditable as="main" cmsFieldName="unstructuredData" className="flex-grow tw-overflow-x-hidden main-content">
         { composition && isNode(composition) && <OptimizelyComposition node={composition} /> }
     </CmsEditable>
 }
