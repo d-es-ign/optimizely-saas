@@ -1,10 +1,10 @@
-'use client'
-import Button from '@/components/atoms/Button/Button';
-import LoadingSpinner from '@/components/atoms/LoadingSpinner/LoadingSpinner';
-import Text from '@/components/atoms/Text/Text';
-import replaceValuesInLabel from '@/components/utility/helpers/replaceValuesInLabel';
-
-import React, { useRef, useState } from 'react';
+"use client";
+import Button from "@/components/atoms/Button/Button";
+import LoadingSpinner from "@/components/atoms/LoadingSpinner/LoadingSpinner";
+import Text from "@/components/atoms/Text/Text";
+import replaceValuesInLabel from "@/components/utility/helpers/replaceValuesInLabel";
+import Icon from "@/components/atoms/Icon/Icon";
+import React, { useRef, useState } from "react";
 
 export interface Props {
   readonly addFilesLabel: string;
@@ -26,10 +26,10 @@ export interface Props {
 }
 
 enum FileStatuses {
-  INITIAL = 'initial',
-  UPLOADING = 'uploading',
-  SUCCESS = 'success',
-  FAIL = 'fail',
+  INITIAL = "initial",
+  UPLOADING = "uploading",
+  SUCCESS = "success",
+  FAIL = "fail",
 }
 
 const FileUpload = ({
@@ -38,13 +38,13 @@ const FileUpload = ({
   discardLabel,
   endpoint,
   errorMessage,
-  filesHaveLabel = 'Files have',
-  filesHasLabel = 'File has',
+  filesHaveLabel = "Files have",
+  filesHasLabel = "File has",
   loadingLabel,
   multiple = false,
   submitFileLabel,
   successMessage,
-  title = 'Upload file',
+  title = "Upload file",
   uploadDescription,
   uploadedFileName,
   uploadCallback,
@@ -67,14 +67,14 @@ const FileUpload = ({
       const formData = new FormData();
 
       Array.from(files).forEach((file) => {
-        formData.append('files', file);
+        formData.append("files", file);
       });
 
       try {
-        if (!endpoint) throw new Error('no endpoint setup');
+        if (!endpoint) throw new Error("no endpoint setup");
 
         const response = await fetch(endpoint, {
-          method: 'POST',
+          method: "POST",
           body: formData,
         });
 
@@ -101,54 +101,100 @@ const FileUpload = ({
   // Function to reset the input element
   const handleReset = () => {
     if (hiddenFileInput.current) {
-      hiddenFileInput.current.value = '';
+      hiddenFileInput.current.value = "";
       setFiles(null);
     }
     setStatus(FileStatuses.INITIAL);
   };
 
   return (
-    <div>
-      <label htmlFor="file" className="tw-sr-only">
-        {addFilesLabel}
-      </label>
-
-      <Text variant="body-14-semibold">{title}</Text>
-      <Text variant="body-small" className="tw-pb-xs tw-pt-xxs tw-text-grey-70">
-        {uploadDescription}
-      </Text>
-      <Result
-        status={status}
-        loadingLabel={loadingLabel}
-        successMessage={successMessage}
-        errorMessage={errorMessage}
-        fileCount={files?.length}
-        filesHasLabel={filesHasLabel}
-        filesHaveLabel={filesHaveLabel}
-      />
+    <div className="tw-flex tw-items-center tw-justify-between tw-px-[20px] lg:tw-px-[100px] tw-py-[60px] lg:tw-w-[640px] tw-border-2 tw-border-grey-40 tw-border-dashed">
       <div>
-        <input
-          type="file"
-          onChange={handleFileChange}
-          ref={hiddenFileInput}
-          multiple={multiple}
-          className="tw-hidden" // Make the html file input element invisible
-        />
+        <label htmlFor="file" className="tw-sr-only">
+          {addFilesLabel}
+        </label>
 
-        {files ? (
-          <>
-            <div className="tw-flex tw-flex-row tw-items-baseline tw-gap-xs">
-              <Button
-                label={discardLabel}
-                variant="grey30"
-                onClick={handleReset}
-              />
-              <Button
-                label={chooseFileLabel}
-                modifier="outline"
-                onClick={handleClick}
-              />
+        <Text variant="body-14-semibold">{title}</Text>
+        <Text
+          variant="body-small"
+          className="tw-pb-xs tw-pt-xxs tw-text-grey-70"
+        >
+          {uploadDescription}
+        </Text>
+        <Result
+          status={status}
+          loadingLabel={loadingLabel}
+          successMessage={successMessage}
+          errorMessage={errorMessage}
+          fileCount={files?.length}
+          filesHasLabel={filesHasLabel}
+          filesHaveLabel={filesHaveLabel}
+        />
+        <div>
+          <input
+            type="file"
+            onChange={handleFileChange}
+            ref={hiddenFileInput}
+            multiple={multiple}
+            className="tw-hidden" // Make the html file input element invisible
+          />
+
+          {files ? (
+            <>
+              <div className="tw-flex tw-flex-row tw-items-baseline tw-gap-xs">
+                <Button
+                  label={discardLabel}
+                  variant="grey30"
+                  onClick={handleReset}
+                />
+                <Button
+                  label={chooseFileLabel}
+                  modifier="outline"
+                  onClick={handleClick}
+                />
+                {multiple ? (
+                  <Button
+                    buttonClasses="tw-mt-xs"
+                    label={submitFileLabel}
+                    onClick={handleUpload}
+                    disabled={
+                      status === FileStatuses.UPLOADING ||
+                      status === FileStatuses.SUCCESS
+                    }
+                  />
+                ) : (
+                  files[0] && (
+                    <Text
+                      variant="body-small"
+                      className="tw-hidden tw-text-grey-70 md:tw-block"
+                    >
+                      {replaceValuesInLabel(uploadedFileName, [files[0].name])}
+                    </Text>
+                  )
+                )}
+              </div>
+              {files[0] && (
+                <Text
+                  variant="body-small"
+                  className="tw-pt-4 tw-text-grey-70 md:tw-hidden"
+                >
+                  {replaceValuesInLabel(uploadedFileName, [files[0].name])}
+                </Text>
+              )}
               {multiple ? (
+                <ul className="tw-p-xs">
+                  {Array.from(files).map((file) => (
+                    <li key={file.name} className="tw-list-disc">
+                      <Text
+                        variant="body-small"
+                        className="tw-pt-xxs tw-text-grey-70"
+                      >
+                        {file.name}
+                      </Text>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
                 <Button
                   buttonClasses="tw-mt-xs"
                   label={submitFileLabel}
@@ -158,54 +204,18 @@ const FileUpload = ({
                     status === FileStatuses.SUCCESS
                   }
                 />
-              ) : (
-                files[0] && (
-                  <Text
-                    variant="body-small"
-                    className="tw-hidden tw-text-grey-70 md:tw-block"
-                  >
-                    {replaceValuesInLabel(uploadedFileName, [files[0].name])}
-                  </Text>
-                )
               )}
-            </div>
-            {files[0] && (
-              <Text
-                variant="body-small"
-                className="tw-pt-4 tw-text-grey-70 md:tw-hidden"
-              >
-                {replaceValuesInLabel(uploadedFileName, [files[0].name])}
-              </Text>
-            )}
-            {multiple ? (
-              <ul className="tw-p-xs">
-                {Array.from(files).map((file) => (
-                  <li key={file.name} className="tw-list-disc">
-                    <Text
-                      variant="body-small"
-                      className="tw-pt-xxs tw-text-grey-70"
-                    >
-                      {file.name}
-                    </Text>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <Button
-                buttonClasses="tw-mt-xs"
-                label={submitFileLabel}
-                onClick={handleUpload}
-                disabled={
-                  status === FileStatuses.UPLOADING ||
-                  status === FileStatuses.SUCCESS
-                }
-              />
-            )}
-          </>
-        ) : (
-          <Button label={addFilesLabel} onClick={handleClick} />
-        )}
+            </>
+          ) : (
+            <Button label={addFilesLabel} onClick={handleClick} />
+          )}
+        </div>
       </div>
+      <Icon
+        name={"download"}
+        className={"tw-rotate-180 tw-mr-[20px]"}
+        size={"2rem"}
+      />
     </div>
   );
 };

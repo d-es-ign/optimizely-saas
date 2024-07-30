@@ -7,7 +7,7 @@ const Icon = ({
   className,
   color,
   colorClassName = "tw-text-inherit",
-  name = "chevron-up",
+  name,
   size = "1rem",
 }: IIcon) => (
   <IcoMoon
