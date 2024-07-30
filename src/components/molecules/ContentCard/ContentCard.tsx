@@ -42,7 +42,7 @@
   }: Props) => {
     const [width, setWidth] = useState(0);
     const isDark = backgroundColour && darkBackgrounds.includes(backgroundColour);
-    console.log(backgroundColour)
+
     const ref = useRef<HTMLDivElement>(null);
 
     const backgroundColourHexCode =
