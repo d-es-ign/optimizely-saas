@@ -1,8 +1,8 @@
-import { IContentCard } from './IContentCard';
-import { ILink } from './ILink';
-import DisplayStyleEnum from './enums/DisplayStyleEnum';
-import SiteEnum from './enums/SiteEnum';
-import VariantTypeEnum from './enums/VariantTypeEnum';
+import { IContentCard } from "./IContentCard";
+import { ILink } from "./ILink";
+import DisplayStyleEnum from "./enums/DisplayStyleEnum";
+import SiteEnum from "./enums/SiteEnum";
+import VariantTypeEnum from "./enums/VariantTypeEnum";
 
 export interface IContentCards {
   readonly site: SiteEnum;
