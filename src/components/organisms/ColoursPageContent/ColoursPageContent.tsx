@@ -80,7 +80,7 @@ const ColoursPageContent = () => {
       <HeroBlock {...heroBlockDummyData} />
       <section className="tw-my-[120px] tw-px-[48px]">
         <Text variant="heading-28">Your shades</Text>
-        <div className="tw-flex tw-gap-12 tw-mt-[60px]">
+        <div className="tw-flex tw-flex-col lg:tw-flex-row tw-gap-12 tw-mt-[60px]">
           {contentCards?.cards?.slice(0, 3).map((contentCard: IContentCard) => (
             <ContentCard
               backgroundColour="black"

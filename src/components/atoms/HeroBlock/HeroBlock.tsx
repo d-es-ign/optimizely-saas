@@ -29,14 +29,18 @@ const HeroBlock = ({
     >
       {variant === "primary" ? (
         <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-px-8 tw-py-32 tw-text-center">
-          <TextContent textContent={textContent} site={site} />
+          <div className="lg:tw-w-[640px]">
+            <TextContent textContent={textContent} site={site} />
+          </div>
         </div>
       ) : (
         <div className="tw-flex tw-flex-col md:tw-flex-row">
           <div className="tw-flex tw-flex-col tw-justify-center tw-p-20 md:tw-w-1/2 tw-text-center tw-text-white">
             <TextContent textContent={textContent} site={site} />
           </div>
-          <div className="md:tw-w-1/2 tw-overflow-hidden">{image && <Image image={image} />}</div>
+          <div className="md:tw-w-1/2 tw-overflow-hidden">
+            {image && <Image image={image} />}
+          </div>
         </div>
       )}
     </div>
