@@ -109,12 +109,12 @@
           'tw-flex tw-h-full tw-flex-col'
         )}
       >
-        
+
         <div className='tw-relative tw-flex tw-items-end tw-pb-4 tw-pl-4 tw-gap-2.5' style={{minHeight:'300px' , backgroundColor:backgroundColourHexCode}}>
         <div className='tw-absolute tw-top-4 tw-bg-white tw-rounded-full tw-min-w-6 tw-min-h-6 tw-text-center tw-cursor-pointer'>
         <Icon  name='heart'/>
         </div>
-        {tags && 
+        {tags &&
           tags.map((tag)=> (
             <span className=' tw-bg-grey-80 tw-p-2 tw-text-[12px]'>{tag}</span>
           )
@@ -128,7 +128,7 @@
           />
         )}
         </div>
-    
+
         <div
           ref={ref}
           className={classNames(
@@ -146,7 +146,7 @@
               backgroundColourHexCode && !hideBackground
                 ? backgroundColourHexCode
                 : '',
-          
+
           }}
         >
           <Text

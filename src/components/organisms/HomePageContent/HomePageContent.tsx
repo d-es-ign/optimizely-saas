@@ -77,7 +77,9 @@ const HomePageContent = () => {
           <TextContent textContent={textContent} site={SiteEnum.B2B} />
         </div>
       </section>
-      <FlexContent textContent={flexContentDummyData} />
+      <div className="tw-bg-grey-10 tw-px-[48px]">
+        <FlexContent textContent={flexContentDummyData} />
+      </div>
       <section className="tw-w-full tw-flex tw-justify-center tw-flex-col tw-items-center tw-py-[60px]">
         <Text variant="headline">What are you painting?</Text>
         <div className="tw-flex tw-pt-[64px] tw-gap-[64px]">
@@ -90,7 +92,9 @@ const HomePageContent = () => {
         </div>
       </section>
       <section className="tw-w-full tw-flex tw-justify-center tw-flex-col tw-items-center tw-mb-[120px]">
-        <Text className="tw-pb-[60px]" variant="headline">What's inspired you?</Text>
+        <Text className="tw-pb-[60px]" variant="headline">
+          What's inspired you?
+        </Text>
         <FileUpload {...fileUploadProps} />
       </section>
     </>
