@@ -8,16 +8,16 @@ const ImageCard = ({ aspectRatio, image, title, text }: IImageCard) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={containerRef} className="tw-flex tw-flex-col tw-text-grey-80">
+    <div ref={containerRef} className="tw-flex tw-flex-col tw-text-grey-80 tw-text-center">
       <Image
         aspectRatio={aspectRatio || undefined}
         containerRef={containerRef}
         image={image}
-        classes="tw-w-full"
+        classes="tw-w-full tw-rounded-full tw-mb-xs"
         imageClasses="tw-w-full"
       />
       {title && (
-        <Text variant="body-14-semibold" className="tw-mt-xs">
+        <Text variant="body-14-semibold">
           {title}
         </Text>
       )}
