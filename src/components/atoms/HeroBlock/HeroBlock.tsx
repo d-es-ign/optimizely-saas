@@ -28,11 +28,11 @@ const HeroBlock = ({
       style={{ backgroundColor: backgroundColor }}
     >
       {variant === "primary" ? (
-        <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-screen tw-px-8 tw-py-32 tw-text-center">
+        <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-px-8 tw-py-32 tw-text-center">
           <TextContent textContent={textContent} site={site} />
         </div>
       ) : (
-        <div className="tw-flex tw-flex-col md:tw-flex-row tw-h-screen">
+        <div className="tw-flex tw-flex-col md:tw-flex-row">
           <div className="tw-flex tw-flex-col tw-justify-center tw-p-20 md:tw-w-1/2 tw-text-center tw-text-white">
             <TextContent textContent={textContent} site={site} />
           </div>
