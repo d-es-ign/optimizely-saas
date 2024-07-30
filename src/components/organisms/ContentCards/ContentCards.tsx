@@ -1,3 +1,4 @@
+"use client"
 import Cta from '@/components/atoms/Cta/Cta';
 import Text from '@/components/atoms/Text/Text';
 import { IContentCards } from '@/components/models/IContentCards';

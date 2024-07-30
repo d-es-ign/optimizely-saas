@@ -9,7 +9,7 @@ export interface IContentCards {
   readonly title?: string;
   readonly displayAs: DisplayStyleEnum;
   readonly cardStyle: Exclude<VariantTypeEnum, VariantTypeEnum.Cta>;
-  readonly itemsPerRow: 2 | 3 | 4;
+  readonly itemsPerRow: 2 | 3 | 4 | 5;
   readonly cta: ILink;
   readonly hideImages: boolean;
   readonly hideCardText: boolean;

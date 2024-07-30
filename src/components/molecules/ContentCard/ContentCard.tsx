@@ -1,3 +1,4 @@
+"use client"
 import Button from '@/components/atoms/Button/Button';
 import Cta from '@/components/atoms/Cta/Cta';
 import Image from '@/components/atoms/Image/Image';

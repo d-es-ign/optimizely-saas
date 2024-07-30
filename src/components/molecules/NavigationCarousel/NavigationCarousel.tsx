@@ -59,10 +59,10 @@ const NavigationCarousel = ({
 
   return (
     <div className="tw-w-full tw-overflow-hidden">
-      <div className="tw-grid-container tw-gap-y-sm md:tw-gap-y-md xxl:tw-gap-y-[60px]">
+      <div className="tw-gap-y-sm md:tw-gap-y-md xxl:tw-gap-y-[60px]">
         <div className="tw-col-span-full tw-flex tw-items-center tw-justify-between">
           {title && (
-            <Text className="tw-text-grey-100" variant="headline">
+            <Text className="tw-text-grey-100 tw-mb-[60px]" variant="headline">
               {title}
             </Text>
           )}
@@ -72,7 +72,7 @@ const NavigationCarousel = ({
               hasMoreItemsToShow
                 ? 'md:tw-flex md:tw-flex-row rtl:md:tw-flex-row-reverse'
                 : 'md:tw-hidden',
-              'tw-ml-auto tw-mt-auto tw-hidden tw-shrink-0 tw-gap-xs tw-py-[6px] rtl:tw-ml-0 rtl:tw-mr-auto'
+              'tw-ml-auto tw-mt-auto tw-hidden tw-shrink-0 tw-gap-xs tw-py-[6px] rtl:tw-ml-0 rtl:tw-mr-auto tw-mb-[60px]'
             )}
           >
             <Button
