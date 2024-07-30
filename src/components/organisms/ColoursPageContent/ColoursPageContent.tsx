@@ -83,6 +83,7 @@ const ColoursPageContent = () => {
         <div className="tw-flex tw-gap-12 tw-mt-[60px]">
           {contentCards?.cards?.slice(0, 3).map((contentCard: IContentCard) => (
             <ContentCard
+              backgroundColour="black"
               site={SiteEnum.B2B}
               variant={VariantTypeEnum.Primary}
               hideImage={false}
