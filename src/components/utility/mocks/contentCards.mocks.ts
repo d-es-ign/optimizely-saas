@@ -26,13 +26,8 @@ const contentCards: IContentCards = {
   backgroundColour: 'jotunBlue',
   cards: [
     {
-      image: {
-        altText: 'Jotun Homes',
-        url: 'https://www.jotun.com/globalassets-b2b/.com/industry-tiles/heropage_homepage.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+   
       title: 'Beautiful Homes',
       text: 'Jotun has many different types of interior and exterior paint, creating colour combinations and design ideas for every home.',
       ctas: [
@@ -43,13 +38,8 @@ const contentCards: IContentCards = {
       ],
     },
     {
-      image: {
-        altText: 'Architecture and Design',
-        url: 'https://www.jotun.com/globalassets-b2b/b2b/architecture-and-design/hero_architecturedesign.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+    
       title: 'Architecture and Design',
       text: 'Long-lasting and beautiful design objects, furniture, buildings, and iconic bridges thanks to our powder, protective, and decorative paints.',
       ctas: [
@@ -64,13 +54,8 @@ const contentCards: IContentCards = {
       ],
     },
     {
-      image: {
-        altText: 'Infrastructure',
-        url: 'https://www.jotun.com/globalassets-b2b/b2b/infrastructure/hero_infastructure.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+   
       title: 'Infrastructure',
       text: 'Beautiful and well-protected buildings, civil infrastructure, harbours, airports, and more thanks to protective, powder, and decorative products.',
       ctas: [
@@ -89,13 +74,8 @@ const contentCards: IContentCards = {
       ],
     },
     {
-      image: {
-        altText: 'Light Industry',
-        url: 'https://www.jotun.com/globalassets-b2b/b2b/light-industry/hero_industrial-and-oem.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+    
       title: 'Light Industry',
       text: 'Jotun powder coatings support the long-lasting performance of your appliances, furniture, and automotive components.',
       ctas: [
@@ -106,13 +86,8 @@ const contentCards: IContentCards = {
       ],
     },
     {
-      image: {
-        altText: 'Shipping and Yachting',
-        url: 'https://www.jotun.com/globalassets-b2b/b2b/shipping/hero_shipping.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+      
       title: 'Shipping and Yachting',
       text: 'We help to protect your vessels and yachts and increase your hull performance with our broad range of marine and yachting coatings.',
       ctas: [
@@ -123,13 +98,8 @@ const contentCards: IContentCards = {
       ],
     },
     {
-      image: {
-        altText: 'Energy',
-        url: 'https://www.jotun.com/globalassets-b2b/b2b/energy/hero_energy.jpg',
-        originalHeight: 920,
-        originalWidth: 14720,
-        imageFocalPoint: '0.5,0.5',
-      },
+      backgroundColour:'red',
+    
       title: 'Energy',
       text: 'Powder and protective coatings to keep your onshore and offshore oil, gas, petrochemical, and refining facilities in the best shape for a long time.',
       ctas: [

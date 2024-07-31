@@ -1,3 +1,4 @@
+"use client"
 import { IImage } from "../../models/IImage";
 import BreakpointEnum from "../../models/enums/BreakpointEnum";
 import breakpoints from "../../../utility/config/breakpoints";

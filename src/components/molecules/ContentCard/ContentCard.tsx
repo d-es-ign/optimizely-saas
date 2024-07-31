@@ -21,8 +21,6 @@
     readonly hideCta: boolean;
     readonly hideText?: boolean;
     readonly hideBackground?: boolean;
-    readonly backgroundColour: string;
-    readonly tags?:string[]
   }
 
   const ContentCard = ({

@@ -6,6 +6,8 @@ export interface IContentCard {
   readonly image?: IImage;
   readonly title: string;
   readonly text: string;
+  readonly backgroundColour: string;
+  readonly tags?:string[]
   readonly ctas?: ILink[];
   readonly ctaStyle?: VariantTypeEnum;
 }
