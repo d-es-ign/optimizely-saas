@@ -34,7 +34,7 @@ const imageCard = {
 //TODO: DELETE DUMMY DATA
 const fileUploadProps = {
   title: "Drag an image here to upload",
-  uploadDescription: "Supports: JPG pr PNG",
+  uploadDescription: "Supports: png, bmp, jpg, jpeg",
   discardLabel: "Cancel",
   chooseFileLabel: "Choose File",
   submitFileLabel: "Submit",
@@ -46,6 +46,7 @@ const fileUploadProps = {
   modal: {},
   filesHaveLabel: "Files have",
   filesHasLabel: "Files has",
+  accept: ".png, .bmp, .jpg, .jpeg",
 };
 
 const heroBlockDummyData = {

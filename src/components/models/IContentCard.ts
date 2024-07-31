@@ -1,6 +1,6 @@
-import { IImage } from './IImage';
-import { ILink } from './ILink';
-import VariantTypeEnum from './enums/VariantTypeEnum';
+import { IImage } from "./IImage";
+import { ILink } from "./ILink";
+import VariantTypeEnum from "./enums/VariantTypeEnum";
 
 export interface IContentCard {
   readonly image?: IImage;
@@ -8,4 +8,5 @@ export interface IContentCard {
   readonly text: string;
   readonly ctas?: ILink[];
   readonly ctaStyle?: VariantTypeEnum;
+  readonly cardBackgroundColour?: string;
 }

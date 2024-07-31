@@ -1,12 +1,12 @@
-"use client"
-import Cta from '@/components/atoms/Cta/Cta';
-import Text from '@/components/atoms/Text/Text';
-import { IContentCards } from '@/components/models/IContentCards';
-import VariantTypeEnum from '@/components/models/enums/VariantTypeEnum';
-import ContentCard from '@/components/molecules/ContentCard/ContentCard';
-import NavigationCarousel from '@/components/molecules/NavigationCarousel/NavigationCarousel';
-import classNames from 'classnames';
-import { SwiperSlide } from 'swiper/react';
+"use client";
+import Cta from "@/components/atoms/Cta/Cta";
+import Text from "@/components/atoms/Text/Text";
+import { IContentCards } from "@/components/models/IContentCards";
+import VariantTypeEnum from "@/components/models/enums/VariantTypeEnum";
+import ContentCard from "@/components/molecules/ContentCard/ContentCard";
+import NavigationCarousel from "@/components/molecules/NavigationCarousel/NavigationCarousel";
+import classNames from "classnames";
+import { SwiperSlide } from "swiper/react";
 
 const ContentCards = ({
   site,
@@ -24,9 +24,9 @@ const ContentCards = ({
 }: IContentCards) => {
   const gridClasses = [
     // we use itemsPerRow with the index of these array elements to determine the classes
-    'tw-col-span-full md:tw-col-span-3 lg:tw-col-span-6',
-    'tw-col-span-full md:tw-col-span-3 lg:tw-col-span-4',
-    'tw-col-span-full md:tw-col-span-3 lg:tw-col-span-6 xl:tw-col-span-3',
+    "tw-col-span-full md:tw-col-span-3 lg:tw-col-span-6",
+    "tw-col-span-full md:tw-col-span-3 lg:tw-col-span-4",
+    "tw-col-span-full md:tw-col-span-3 lg:tw-col-span-6 xl:tw-col-span-3",
   ];
 
   const ctaEl = cta ? (
@@ -41,7 +41,7 @@ const ContentCards = ({
 
   return (
     <section className="tw-w-full">
-      {displayAs === 'grid' && (
+      {displayAs === "grid" && (
         <>
           <div className="tw-grid-container">
             {(title || cta) && (
@@ -61,7 +61,7 @@ const ContentCards = ({
                 key={card.title}
                 className={classNames(
                   gridClasses[itemsPerRow - 2],
-                  'tw-col-span-full'
+                  "tw-col-span-full",
                 )}
               >
                 <ContentCard
@@ -83,13 +83,13 @@ const ContentCards = ({
           {ctaEl && <div className="tw-container md:tw-hidden">{ctaEl}</div>}
         </>
       )}
-      {displayAs === 'carousel' && (
+      {displayAs === "carousel" && (
         <NavigationCarousel
           site={site}
           title={title}
           id={`${title}-content-cards-carousel`}
           numberOfSlides={cards.length}
-          slidesToShowTabletLandscape={itemsPerRow < 3 ? 2 : itemsPerRow - 1}
+          slidesToShowTabletLandscape={itemsPerRow < 3 ? 2 : itemsPerRow}
           slidesToShowDesktop={itemsPerRow}
           slidesToShowLargeDesktop={itemsPerRow}
         >
