@@ -3,6 +3,7 @@ import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import CardBlock from "./CardBlock";
 import OfficeLocation from "./HomePageContent";
 import BannerBlock from "./BannerBlock";
+import FlexContentBlock from "./FlexContentBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -16,6 +17,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'BannerBlock',
         component: BannerBlock
+    },
+    {
+        type: 'FlexContentBlock',
+        component: FlexContentBlock
     },
 ]
 
