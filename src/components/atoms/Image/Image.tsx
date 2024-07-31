@@ -1,3 +1,4 @@
+"use client";
 import { IImage } from "../../models/IImage";
 import BreakpointEnum from "../../models/enums/BreakpointEnum";
 import breakpoints from "../../../utility/config/breakpoints";
@@ -77,12 +78,12 @@ const Image = ({
 
   const generateUrlWithExtension = (
     requestedWidth: number,
-    quality?: number
+    quality?: number,
   ) => {
     const focalPointString = imageFocalPoint ? `&rxy=${imageFocalPoint}` : "";
 
     return `${url}?format=webp&width=${requestedWidth}${heightString(
-      requestedWidth
+      requestedWidth,
     )}${focalPointString}${quality ? `&quality=${quality}` : ""}`;
   };
 
@@ -110,7 +111,7 @@ const Image = ({
       .filter((breakpointWidth) => !width || breakpointWidth < width)
       .map(
         (breakpointWidth) =>
-          `${generateUrlWithExtension(breakpointWidth)} ${breakpointWidth}w`
+          `${generateUrlWithExtension(breakpointWidth)} ${breakpointWidth}w`,
       )
       .join(", ");
   }, [breakpointWidths, width]);
@@ -140,7 +141,7 @@ const Image = ({
           className={classNames(
             imageClasses,
             { "tw-blur-xl": !loaded },
-            "tw-transition tw-duration-500 tw-ease-in-out"
+            "tw-transition tw-duration-500 tw-ease-in-out",
           )}
           draggable="false"
           style={{
