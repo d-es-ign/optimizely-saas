@@ -70,7 +70,7 @@ export const imageCards = [
     aspectRatio: 1,
     image: {
       altText: "Jotun Logo",
-      url: "/images/image.png",
+      url: "/images/Image.png",
       originalHeight: 650,
       originalWidth: 400,
       imageFocalPoint: "0.5,0.5",
@@ -81,7 +81,7 @@ export const imageCards = [
     aspectRatio: 1,
     image: {
       altText: "Jotun Logo",
-      url: "/images/image2.png",
+      url: "/images/Image2.png",
       originalHeight: 650,
       originalWidth: 400,
       imageFocalPoint: "0.5,0.5",
@@ -92,7 +92,7 @@ export const imageCards = [
     aspectRatio: 10,
     image: {
       altText: "Jotun Logo",
-      url: "/images/image3.png",
+      url: "/images/Image3.png",
       originalHeight: 650,
       originalWidth: 400,
       imageFocalPoint: "0.5,0.5",
