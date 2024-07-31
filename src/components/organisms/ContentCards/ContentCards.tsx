@@ -56,7 +56,7 @@ const ContentCards = ({
             )}
           </div>
           <div className="tw-grid-container tw-gap-y-4 md:tw-gap-y-8">
-            {cards.map((card) => (
+            {cards.map((card, index) => (
               <div
                 key={card.title}
                 className={classNames(
@@ -76,6 +76,7 @@ const ContentCards = ({
                     (cardStyle === VariantTypeEnum.Secondary && !hideImages) ||
                     hideCardBackground
                   }
+                  key={`${card.text}-${index}`}
                 />
               </div>
             ))}
@@ -93,7 +94,7 @@ const ContentCards = ({
           slidesToShowDesktop={itemsPerRow}
           slidesToShowLargeDesktop={itemsPerRow}
         >
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <SwiperSlide className="stretch-card tw-h-full" key={card.title}>
               <ContentCard
                 {...card}
@@ -106,6 +107,7 @@ const ContentCards = ({
                 hideBackground={
                   cardStyle === VariantTypeEnum.Secondary || hideCardBackground
                 }
+                key={`${card.text}-${index}`}
               />
             </SwiperSlide>
           ))}
