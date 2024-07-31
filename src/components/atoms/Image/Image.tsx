@@ -65,7 +65,7 @@ const Image = ({
       return aspectRatio;
     }
 
-    const originalAspectRatio = originalWidth / originalHeight;
+    const originalAspectRatio = (originalWidth || 16) / (originalHeight || 9);
     if (originalAspectRatio) return originalAspectRatio;
     else return undefined;
   }, [width, height, aspectRatio, originalWidth, originalHeight]);

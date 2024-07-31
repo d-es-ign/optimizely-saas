@@ -160,6 +160,14 @@ export const BlankExperienceDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
+export const BannerBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment BannerBlockData on BannerBlock {
+  Title
+  Image: Image {
+    ...ReferenceData
+  }
+}
+    `;
 export const ButtonBlockPropertyDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ButtonBlockPropertyData on ButtonBlockProperty {
   text
@@ -239,6 +247,7 @@ export const MegaMenuGroupBlockDataFragmentDoc = /*#__PURE__*/ gql`
 export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
+  ...BannerBlockData
   ...CardBlockData
   ...OfficeLocationData
   ...ButtonBlockData
@@ -486,8 +495,9 @@ export const getContentByIdDocument = /*#__PURE__*/ gql`
 ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${CardBlockDataFragmentDoc}
+${BannerBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
@@ -538,6 +548,7 @@ ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
+${BannerBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
