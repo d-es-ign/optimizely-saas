@@ -19,6 +19,7 @@ const documents = {
     "fragment ElementData on _IElement {\n  ...IElementData\n}": types.ElementDataFragmentDoc,
     "fragment ExperienceData on _IExperience {\n  composition {\n    ...CompositionData\n  }\n}": types.ExperienceDataFragmentDoc,
     "fragment IElementData on _IElement {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}": types.IElementDataFragmentDoc,
+    "fragment BannerBlockData on BannerBlock {\n  Title\n  Image: Image {\n    ...ReferenceData\n  }\n}": types.BannerBlockDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
@@ -90,6 +91,10 @@ export function gql(source: "fragment ExperienceData on _IExperience {\n  compos
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment IElementData on _IElement {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}"): (typeof documents)["fragment IElementData on _IElement {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment BannerBlockData on BannerBlock {\n  Title\n  Image: Image {\n    ...ReferenceData\n  }\n}"): (typeof documents)["fragment BannerBlockData on BannerBlock {\n  Title\n  Image: Image {\n    ...ReferenceData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
