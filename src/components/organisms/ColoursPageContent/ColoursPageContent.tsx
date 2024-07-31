@@ -42,6 +42,7 @@ const ColoursPageContent = ({
                   variant="grey80"
                   href="/"
                   label={cta.text}
+                  key={`${cta.text}-${index}`}
                 />
               ))}
             </div>
@@ -56,6 +57,7 @@ const ColoursPageContent = ({
                     site={SiteEnum.B2B}
                     variant={VariantTypeEnum.Primary}
                     hideImage={false}
+                    key={contentCard.text}
                     hideCta={false}
                     hideText={false}
                     hideBackground={false}
@@ -66,7 +68,7 @@ const ColoursPageContent = ({
           </div>
         </div>
         <div className="tw-ml-auto xl:tw-w-1/2 ">
-          <Image image={portraitImage} />
+          <Image width={640} height={750} image={portraitImage} />
         </div>
       </section>
       <section className="tw-pb-[120px] tw-px-[48px] tw-bg-grey-10">
@@ -76,9 +78,16 @@ const ColoursPageContent = ({
         <div className="lg:tw-w-[640px] tw-text-center">
           <TextContent textContent={textContent} site={SiteEnum.B2B} />
         </div>
-        <div className="tw-flex tw-gap-sm tw-py-[120px]">
-          {imageCards.map((image) => (
-            <Image image={image.image} />
+        <div className="tw-flex tw-gap-sm tw-py-[120px] tw-w-full">
+          {imageCards.map((image, index) => (
+            <div>
+              <Image
+                width={image.image.originalWidth}
+                height={image.image.originalHeight}
+                image={image.image}
+                key={`${image.text}-${index}`}
+              />
+            </div>
           ))}
         </div>
         <FlexContent textContent={flexContentDummyData} />
