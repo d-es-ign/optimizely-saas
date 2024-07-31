@@ -1,0 +1,4 @@
+fragment FlexContentBlockData on FlexContentBlock {
+  Title
+  Text
+}
