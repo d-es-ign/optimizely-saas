@@ -64,3 +64,56 @@ export const flexContentDummyData = {
     "Soil and sand, shells and stones...Nature offers far more colors than green. Solidearth tones, muted, yellow shades and warm, redscolors can give associations to a magnificent landscapeof mountains and desert. Beautiful, endless natural riches,which glows in the sunrise.z",
   headerStyle: "heading-36",
 };
+
+export const imageCards = [
+  {
+    aspectRatio: 1,
+    image: {
+      altText: "Jotun Logo",
+      url: "https://www.jotun.com/globalassets-b2b/.com/industry-tiles/heropage_homepage.jpg?format=webp&width=2560&quality=70",
+      originalHeight: 300,
+      originalWidth: 200,
+      imageFocalPoint: "0.5,0.5",
+    },
+    text: "Indoors",
+  },
+  {
+    aspectRatio: 1,
+    image: {
+      altText: "Jotun Logo",
+      url: "https://www.jotun.com/globalassets-b2b/.com/industry-tiles/heropage_homepage.jpg?format=webp&width=2560&quality=70",
+      originalHeight: 300,
+      originalWidth: 200,
+      imageFocalPoint: "0.5,0.5",
+    },
+    text: "Indoors",
+  },
+  {
+    aspectRatio: 1,
+    image: {
+      altText: "Jotun Logo",
+      url: "https://www.jotun.com/globalassets-b2b/.com/industry-tiles/heropage_homepage.jpg?format=webp&width=2560&quality=70",
+      originalHeight: 300,
+      originalWidth: 200,
+      imageFocalPoint: "0.5,0.5",
+    },
+    text: "Indoors",
+  },
+];
+export const perfectColors = {
+  textContent: {
+    header: "The perfect shades for your room.",
+    subText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  cta: [
+    {
+      url: "http://test-site.jotun.com",
+      text: "Call to action",
+    },
+    {
+      url: "http://test-site.jotun.com",
+      text: "Call to action",
+    },
+  ],
+};

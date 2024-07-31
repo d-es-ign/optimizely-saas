@@ -105,12 +105,12 @@ const ContentCard = ({
     <article
       className={classNames(
         { "tw-dark": isDark && !hideBackground },
-        "tw-flex tw-h-full tw-flex-col",
+        "tw-flex tw-h-full tw-flex-col tw-shadow-sm",
       )}
     >
       <div
         className="tw-relative tw-flex tw-items-end tw-pb-4 tw-pl-4 tw-gap-2.5"
-        style={{ minHeight: "300px", backgroundColor: cardBackgroundColour }}
+        style={{ minHeight: "355px", backgroundColor: cardBackgroundColour }}
       >
         <div className="tw-absolute tw-top-4 tw-bg-white tw-rounded-full tw-min-w-6 tw-min-h-6 tw-text-center tw-cursor-pointer">
           <Icon name="heart" />
@@ -139,14 +139,8 @@ const ContentCard = ({
           { "tw-px-xs md:tw-px-sm xl:tw-p-md": !hideBackground },
           { "tw-text-white": backgroundColour && !hideBackground && isDark },
           { "tw-text-grey-100": backgroundColour && !isDark },
-          "tw-flex tw-grow tw-flex-col tw-items-start  tw-py-sm  tw-px-3",
+          "tw-flex tw-grow tw-flex-col tw-items-start  tw-py-sm  tw-px-3 tw-bg-white",
         )}
-        style={{
-          backgroundColor:
-            backgroundColourHexCode && !hideBackground
-              ? backgroundColourHexCode
-              : "",
-        }}
       >
         <Text className="tw-text-[12px] tw-text-grey-100">{title}</Text>
         {!hideText && (
