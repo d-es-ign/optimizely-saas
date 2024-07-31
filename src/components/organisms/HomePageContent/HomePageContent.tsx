@@ -7,14 +7,13 @@ import HeroBlock from "@/components/atoms/HeroBlock/HeroBlock";
 import FlexContent from "@/components/atoms/FlexContent/FlexContent";
 import { portraitImage } from "@/utility/mocks/image.mocks";
 
-//TODO: DELETE DUMMY DATA
 const textContent = {
-  header: "Your recent searches",
+  header: "Check our blog for inspiration",
   subText:
-    "Ready to continue your journey to the perfect palette? Pick up right where you left off with your recent search results and dive back into finding the ideal colours for your space.",
+    "Ready to continue your journey to the perfect palette? Dive into finding the ideal colours for your space.",
   cta: {
-    url: "http://test-site.jotun.com",
-    text: "Call to action",
+    url: "/blog",
+    text: "Go to blog",
   },
 };
 
