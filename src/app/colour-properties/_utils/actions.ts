@@ -40,6 +40,9 @@ export async function getComplimentaryColoursAction(formData: FormData) {
           ?.forEach((color) => {
             searchParams.append("relatedColors", color);
           });
+
+        searchParams.append("accentColour", "#" + result.color?.accentColor);
+        searchParams.append("img", blobName);
       }
     }
   } catch (error) {

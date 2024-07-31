@@ -2,9 +2,11 @@ import { IContentCards } from "@/components/models/IContentCards";
 import DisplayStyleEnum from "@/components/models/enums/DisplayStyleEnum";
 import VariantTypeEnum from "@/components/models/enums/VariantTypeEnum";
 import SiteEnum from "@/components/models/enums/SiteEnum";
+import { IContentCard } from "@/components/models/IContentCard";
 
 export const getRelatedColoursSectionData = (
   relatedColors: string[] | undefined,
+  accentColour: string | undefined,
 ) => {
   const cards = relatedColors?.length
     ? relatedColors.map((colour: string) => ({
@@ -37,5 +39,13 @@ export const getRelatedColoursSectionData = (
     cards,
   };
 
-  return relatedColoursSection;
+  const accentColourCard = accentColour
+    ? ({
+        title: accentColour,
+        text: "Colour name: cn-" + accentColour,
+        cardBackgroundColour: accentColour,
+      } satisfies IContentCard)
+    : undefined;
+
+  return { relatedColoursSection, accentColourCard };
 };
