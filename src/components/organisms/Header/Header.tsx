@@ -113,7 +113,7 @@ const HeaderNavigation = ({
             </div>
             <div className="tw-col-span-3 tw-flex tw-items-center tw-justify-center md:tw-col-span-1">
               {logo && (
-                <a href="/">
+                <a href="/home">
                   <img
                     src={logo}
                     alt={logoAlt}
