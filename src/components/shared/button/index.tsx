@@ -13,17 +13,17 @@ export type ButtonProps = Readonly<PropsWithChildren<{
 }> & Omit<ComponentProps<typeof Link>, 'href'>>
 
 const buttonTypes = {
-    primary: "btn--primary",
-    secondary: "btn--secondary",
+    primary: "primary",
+    secondary: "secondary",
 };
 const buttonVariants = {
-    default: "btn--default",
-    cta: "btn--cta",
+    default: "default",
+    cta: "cta",
 };
 const buttonColors = {
     default: "",
-    dark: "btn--dark",
-    light: "btn--light"
+    dark: "dark",
+    light: "light"
 }
 export function Button ({
     className = "",
