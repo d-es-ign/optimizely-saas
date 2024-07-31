@@ -55,8 +55,8 @@ export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data:
 
     return (
 <section className={`tw-w-full tw-h-full tw-p-[20px] lg:tw-py-[120px] lg:tw-px-[48px] rounded-[40px] @container/card ${additionalClasses.join(" ")}`}>
-    <div className="tw-flex tw-justify-center tw-w-full">
-        <div className={`tw-h-auto tw-flex tw-flex-col tw-max-w-[30%] tw-mr-[48px] ${innerClasses.join(" ")} dark:!text-ghost-white dark:prose-h3:text-ghost-white dark:prose-h2:text-ghost-white`}>
+    <div className="tw-flex tw-justify-center tw-w-full tw-flex-col lg:tw-flex-row">
+        <div className={`tw-h-auto tw-flex tw-flex-col lg:tw-max-w-[30%] tw-mr-[48px] ${innerClasses.join(" ")} dark:!text-ghost-white dark:prose-h3:text-ghost-white dark:prose-h2:text-ghost-white`}>
             <div>
             { (icon || inEditMode) && <CmsEditable as={Image} cmsFieldName="CardIcon" src={ icon } alt={""} width={48} height={48} /> }
             { (heading || inEditMode) && <CmsEditable as="h2" className="tw-text-xl tw-my-[20px]" cmsFieldName="CardHeading">{ heading }</CmsEditable> }

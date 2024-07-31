@@ -1,0 +1,4 @@
+fragment BannerBlockData on BannerBlock {
+  Title
+  Image: Image { ...ReferenceData }
+}
