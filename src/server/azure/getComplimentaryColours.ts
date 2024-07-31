@@ -18,7 +18,7 @@ export async function getComplimentaryColours(
   const result = await generateText({
     model: azure("colours"),
     system:
-      "You are a colour consultant, given what is provided you will provide and only provide a CSV of hex codes that represent a analogous colour scheme based on the provided theme or colour. Do not output anything but the CSV.",
+      "You are a colour consultant, given what is provided you will provide and only provide a CSV of hex codes that represent a complimentary colour scheme based on the provided theme or colour. Do not output anything but the CSV.",
     prompt: colour,
   });
 

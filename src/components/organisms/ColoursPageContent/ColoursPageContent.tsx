@@ -21,8 +21,12 @@ import Image from "@/components/atoms/Image/Image";
 
 const ColoursPageContent = ({
   relatedColoursSection,
+  accentColourCard,
+  imageUrl,
 }: {
   relatedColoursSection: IContentCards;
+  accentColourCard?: IContentCard;
+  imageUrl?: string;
 }) => {
   return (
     <>
@@ -48,27 +52,25 @@ const ColoursPageContent = ({
             </div>
           </div>
           <div className="tw-mt-auto tw-flex tw-gap-8">
-            {relatedColoursSection?.cards
-              ?.slice(0, 2)
-              .map((contentCard: IContentCard) => (
-                <div className="tw-w-1/2">
+            {accentColourCard && (
+              <div className="tw-w-1/2">
                   <ContentCard
                     backgroundColour=""
                     site={SiteEnum.B2B}
                     variant={VariantTypeEnum.Primary}
                     hideImage={false}
-                    key={contentCard.text}
+                    key={accentColourCard.text}
                     hideCta={false}
                     hideText={false}
                     hideBackground={false}
-                    {...contentCard}
+                    {...accentColourCard}
                   />
                 </div>
-              ))}
+              )}
           </div>
         </div>
         <div className="tw-ml-auto xl:tw-w-1/2 ">
-          <Image width={640} height={750} image={portraitImage} />
+          {imageUrl && <Image width={640} height={750} image={{ ...portraitImage, url: imageUrl }} />}
         </div>
       </section>
       <section className="tw-pb-[120px] tw-px-[48px] tw-bg-grey-10">

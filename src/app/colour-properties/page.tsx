@@ -1,5 +1,6 @@
 import ColoursPageContent from "@/components/organisms/ColoursPageContent/ColoursPageContent";
 import { getRelatedColoursSectionData } from "@/app/colour-properties/_utils/getRelatedColoursSectionData";
+const blobStoragePath = process.env.BLOB_STORAGE_PATH;
 
 export default function ColourPropertiesPage({
   searchParams,
@@ -7,7 +8,21 @@ export default function ColourPropertiesPage({
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const relatedColors = searchParams?.relatedColors as string[] | undefined;
-  const relatedColoursSection = getRelatedColoursSectionData(relatedColors);
+  const accentColour = searchParams?.accentColour as string | undefined;
 
-  return <ColoursPageContent relatedColoursSection={relatedColoursSection} />;
+  const { relatedColoursSection, accentColourCard } =
+    getRelatedColoursSectionData(relatedColors, accentColour);
+
+  const img = searchParams?.img as string | undefined;
+
+  const imageUrl = blobStoragePath && img ? blobStoragePath + img : undefined;
+  // const accentColourSection = getRelatedColoursSectionData(relatedColors);
+
+  return (
+    <ColoursPageContent
+      relatedColoursSection={relatedColoursSection}
+      accentColourCard={accentColourCard}
+      imageUrl={imageUrl}
+    />
+  );
 }

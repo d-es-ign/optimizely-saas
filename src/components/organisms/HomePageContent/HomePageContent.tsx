@@ -7,6 +7,10 @@ import HeroBlock from "@/components/atoms/HeroBlock/HeroBlock";
 import FlexContent from "@/components/atoms/FlexContent/FlexContent";
 import { portraitImage } from "@/utility/mocks/image.mocks";
 
+import indoors from "@/assets/images/indoors.jpg";
+import outdoors from "@/assets/images/outdoors.jpg";
+
+//TODO: DELETE DUMMY DATA
 const textContent = {
   header: "Check our blog for inspiration",
   subText:
@@ -18,17 +22,30 @@ const textContent = {
 };
 
 //TODO: DELETE DUMMY DATA
-const imageCard = {
-  aspectRatio: 1,
-  image: {
-    altText: "Jotun Logo",
-    url: "https://www.jotun.com/globalassets-b2b/corporate/who-we-are/about-jotun-who-we-are-4.jpg",
-    originalHeight: 100,
-    originalWidth: 200,
-    imageFocalPoint: "0.5,0.5",
+const imageCards = [
+  {
+    aspectRatio: 1,
+    image: {
+      altText: "Jotun Logo",
+      url: indoors.src,
+      originalHeight: 100,
+      originalWidth: 200,
+      imageFocalPoint: "0.5,0.5",
+    },
+    text: "Indoors",
   },
-  text: "Indoors",
-};
+  {
+    aspectRatio: 1,
+    image: {
+      altText: "Jotun Logo",
+      url: outdoors.src,
+      originalHeight: 100,
+      originalWidth: 200,
+      imageFocalPoint: "0.5,0.5",
+    },
+    text: "Outdoors",
+  },
+];
 
 //TODO: DELETE DUMMY DATA
 const fileUploadProps = {
@@ -38,7 +55,7 @@ const fileUploadProps = {
   chooseFileLabel: "Choose File",
   submitFileLabel: "Submit",
   uploadedFileName: "File: ",
-  loadingLabel: "loading...",
+  loadingLabel: "... Image is being processed",
   successMessage: "successful upload",
   errorMessage: "error uploading",
   addFilesLabel: "Browse files",
@@ -84,10 +101,10 @@ const HomePageContent = () => {
         <Text variant="headline">What are you painting?</Text>
         <div className="tw-flex tw-pt-[64px] tw-gap-[64px]">
           <div className="tw-w-[140px]">
-            <ImageCard {...imageCard} />
+            <ImageCard {...imageCards[0]} />
           </div>
           <div className="tw-w-[140px]">
-            <ImageCard {...imageCard} />
+            <ImageCard {...imageCards[1]} />
           </div>
         </div>
       </section>

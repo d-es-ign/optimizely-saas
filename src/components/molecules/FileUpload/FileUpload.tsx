@@ -3,9 +3,11 @@ import Button from "@/components/atoms/Button/Button";
 import LoadingSpinner from "@/components/atoms/LoadingSpinner/LoadingSpinner";
 import Text from "@/components/atoms/Text/Text";
 import replaceValuesInLabel from "@/components/utility/helpers/replaceValuesInLabel";
-import Icon from "@/components/atoms/Icon/Icon";
 import React, { useRef, useState } from "react";
 import { getComplimentaryColoursAction } from "@/app/colour-properties/_utils/actions";
+import UploadIcon from "@/components/atoms/Icon/UploadIcon";
+import SizeEnum from "@/components/models/enums/SizeEnum";
+import { useFormStatus } from "react-dom";
 
 export interface Props {
   readonly addFilesLabel: string;
@@ -64,6 +66,8 @@ const FileUpload = ({
     }
   };
 
+  const { pending } = useFormStatus();
+
   const handleUpload = async () => {
     if (files) {
       setStatus(FileStatuses.UPLOADING);
@@ -110,9 +114,15 @@ const FileUpload = ({
     setStatus(FileStatuses.INITIAL);
   };
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
-    <div className="tw-flex tw-items-center tw-justify-between tw-px-[20px] lg:tw-px-[100px] tw-py-[60px] lg:tw-w-[640px] tw-border-2 tw-border-grey-40 tw-border-dashed">
-      <div>
+    <div className=" tw-flex tw-items-center tw-justify-between tw-px-[20px] lg:tw-px-[100px] tw-py-[60px] lg:tw-w-[640px] tw-border-2 tw-border-grey-40 tw-border-dashed">
+      <div
+        style={{
+          display: status === FileStatuses.UPLOADING ? "none" : "block",
+        }}
+      >
         <label htmlFor="file" className="tw-sr-only">
           {addFilesLabel}
         </label>
@@ -134,7 +144,7 @@ const FileUpload = ({
           filesHaveLabel={filesHaveLabel}
         />
         <div>
-          <form action={getComplimentaryColoursAction}>
+          <form ref={formRef} action={getComplimentaryColoursAction}>
             <input
               type="file"
               name="file"
@@ -153,11 +163,6 @@ const FileUpload = ({
                     variant="grey30"
                     onClick={handleReset}
                   />
-                  <Button
-                    label={chooseFileLabel}
-                    modifier="outline"
-                    onClick={handleClick}
-                  />
                   {multiple ? (
                     <Button
                       buttonClasses="tw-mt-xs"
@@ -174,9 +179,7 @@ const FileUpload = ({
                         variant="body-small"
                         className="tw-hidden tw-text-grey-70 md:tw-block"
                       >
-                        {replaceValuesInLabel(uploadedFileName, [
-                          files[0].name,
-                        ])}
+                        {uploadedFileName + files[0].name}
                       </Text>
                     )
                   )}
@@ -207,7 +210,10 @@ const FileUpload = ({
                     buttonClasses="tw-mt-xs"
                     label={submitFileLabel}
                     type="submit"
-                    // onClick={handleUpload}
+                    onClick={() => {
+                      setStatus(FileStatuses.UPLOADING);
+                      formRef?.current?.submit();
+                    }}
                     disabled={
                       status === FileStatuses.UPLOADING ||
                       status === FileStatuses.SUCCESS
@@ -225,11 +231,16 @@ const FileUpload = ({
           </form>
         </div>
       </div>
-      <Icon
-        name={"download"}
-        className={"tw-rotate-180 tw-mr-[20px]"}
-        size={"2rem"}
-      />
+      <UploadIcon />
+
+      {FileStatuses.UPLOADING === status && (
+        <p className="tw-mb-xs tw-flex tw-flex-row tw-items-center tw-gap-xxs">
+          <LoadingSpinner size={SizeEnum.Large} loadingLabel={loadingLabel} />
+          <Text variant="label-12" className="tw-text-grey-70">
+            {loadingLabel}
+          </Text>
+        </p>
+      )}
     </div>
   );
 };
