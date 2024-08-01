@@ -4,6 +4,7 @@ import CardBlock from "./CardBlock";
 import OfficeLocation from "./HomePageContent";
 import BannerBlock from "./BannerBlock";
 import FlexContentBlock from "./FlexContentBlock";
+import TextContentAndCtaBlock from "./TextContentAndCtaBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -21,6 +22,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'FlexContentBlock',
         component: FlexContentBlock
+    },
+    {
+        type: 'TextContentAndCta',
+        component: TextContentAndCtaBlock
     },
 ]
 

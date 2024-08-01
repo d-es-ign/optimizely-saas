@@ -1,0 +1,5 @@
+fragment TextContentAndCtaBlockData on TextContentAndCta {
+  title: Title
+  text: Text
+  button: Button { ...ButtonBlockPropertyData }
+}
