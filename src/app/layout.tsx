@@ -56,7 +56,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               className="tw-hidden tw-invisible"
             ></iframe>
             <div className="flex min-h-screen flex-col justify-between">
-              {/* @ts-expect-error Server Component */}
               <Header />
               {children}
               <Footer />
