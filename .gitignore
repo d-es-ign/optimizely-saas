@@ -5,6 +5,7 @@
 
 # Node artifact files
 node_modules/
+dist/
 /.next/
 
 
@@ -23,7 +24,7 @@ node_modules/
 
 # Maven
 target/
-dist/
+# dist/
 
 # JetBrains IDE
 .idea/
