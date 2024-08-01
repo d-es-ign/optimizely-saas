@@ -23,6 +23,7 @@ const documents = {
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment FlexContentBlockData on FlexContentBlock {\n  Title\n  Text\n}": types.FlexContentBlockDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
+    "fragment TextContentAndCtaBlockData on TextContentAndCta {\n  title: Title\n  text: Text\n  button: Button {\n    ...ButtonBlockPropertyData\n  }\n}": types.TextContentAndCtaBlockDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
@@ -108,6 +109,10 @@ export function gql(source: "fragment FlexContentBlockData on FlexContentBlock {
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}"): (typeof documents)["fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment TextContentAndCtaBlockData on TextContentAndCta {\n  title: Title\n  text: Text\n  button: Button {\n    ...ButtonBlockPropertyData\n  }\n}"): (typeof documents)["fragment TextContentAndCtaBlockData on TextContentAndCta {\n  title: Title\n  text: Text\n  button: Button {\n    ...ButtonBlockPropertyData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
