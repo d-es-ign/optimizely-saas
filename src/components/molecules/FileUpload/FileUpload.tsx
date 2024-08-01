@@ -210,6 +210,7 @@ const FileUpload = ({
                     buttonClasses="tw-mt-xs"
                     label={submitFileLabel}
                     type="submit"
+                    modifier="outline"
                     onClick={() => {
                       setStatus(FileStatuses.UPLOADING);
                       formRef?.current?.submit();
@@ -224,6 +225,7 @@ const FileUpload = ({
             ) : (
               <Button
                 type="button"
+                modifier="outline"
                 label={addFilesLabel}
                 onClick={handleClick}
               />
