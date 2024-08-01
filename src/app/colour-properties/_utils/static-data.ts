@@ -5,7 +5,7 @@ import SiteEnum from "@/components/models/enums/SiteEnum";
 export const textContent = {
   header: "Classic neutrals",
   subText:
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit. Integer nibh tellus aliquet nec scelerisque et vehicula vel diam. Pellentesque imperdiet libero nec sem laoreet eget auctor dui euismod. ",
+    "A golden, whitish tone. This is a yellowish white tone, and compared with the well-known 1001 Egg White and 1453 Cotton Ball, it is obviously slightly darker and slightly more yellow.",
 };
 
 //TODO: DELETE DUMMY DATA
@@ -45,7 +45,7 @@ export const heroBlockDummyData = {
   textContent: {
     header: "Your perfect colour",
     subText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      "In Jotun, we have been creating colours for nearly 100 years. Our library spans thousands of options, each telling a different story. With an infinite world to choose from, we understand that selecting the perfect colour for your project can be challenging.",
     headerStyle: "hero-headline",
     cta: {
       text: "Search again",
@@ -104,16 +104,16 @@ export const perfectColors = {
   textContent: {
     header: "The perfect shades for your room.",
     subText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Jotun is one of the world's leading paints and coatings manufacturers, combining the best quality with constant innovation and creativity. For almost a century, we have protected all types of property - from iconic buildings to beautiful homes.",
   },
   cta: [
     {
       url: "http://test-site.jotun.com",
-      text: "Call to action",
+      text: "Search again",
     },
     {
       url: "http://test-site.jotun.com",
-      text: "Call to action",
+      text: "Customize results",
     },
   ],
 };

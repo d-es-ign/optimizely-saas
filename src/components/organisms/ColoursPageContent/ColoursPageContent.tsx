@@ -38,9 +38,10 @@ const ColoursPageContent = ({
               textContent={perfectColors.textContent}
               site={SiteEnum.B2B}
             />
-            <div className="tw-flex tw-gap-2 tw-pt-4 tw-mb-[40px] xl:tw-mb-[0px]">
+            <div className="tw-flex tw-gap-2 tw-pt-6 tw-mb-[40px] xl:tw-mb-[0px]">
               {perfectColors.cta.map((cta, index) => (
                 <Button
+                  as="link"
                   style={{ width: "100%" }}
                   modifier={index ? "fill" : "outline"}
                   variant="grey80"
@@ -54,23 +55,29 @@ const ColoursPageContent = ({
           <div className="tw-mt-auto tw-flex tw-gap-8">
             {accentColourCard && (
               <div className="tw-w-1/2">
-                  <ContentCard
-                    backgroundColour=""
-                    site={SiteEnum.B2B}
-                    variant={VariantTypeEnum.Primary}
-                    hideImage={false}
-                    key={accentColourCard.text}
-                    hideCta={false}
-                    hideText={false}
-                    hideBackground={false}
-                    {...accentColourCard}
-                  />
-                </div>
-              )}
+                <ContentCard
+                  backgroundColour=""
+                  site={SiteEnum.B2B}
+                  variant={VariantTypeEnum.Primary}
+                  hideImage={false}
+                  key={accentColourCard.text}
+                  hideCta={false}
+                  hideText={false}
+                  hideBackground={false}
+                  {...accentColourCard}
+                />
+              </div>
+            )}
           </div>
         </div>
         <div className="tw-ml-auto xl:tw-w-1/2 ">
-          {imageUrl && <Image width={640} height={750} image={{ ...portraitImage, url: imageUrl }} />}
+          {imageUrl && (
+            <Image
+              width={640}
+              height={750}
+              image={{ ...portraitImage, url: imageUrl }}
+            />
+          )}
         </div>
       </section>
       <section className="tw-pb-[120px] tw-px-[48px] tw-bg-grey-10">
