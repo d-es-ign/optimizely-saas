@@ -8,8 +8,6 @@ node_modules/
 # dist/
 /.next/
 
-
-
 # Compiled Java class files
 *.class
 
@@ -53,3 +51,5 @@ Thumbs.db
 
 
 certificates
+
+.env.backup
