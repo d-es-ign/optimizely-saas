@@ -1,0 +1,33 @@
+{
+  "[dotnet]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+  },
+  "[javascript, javascriptreact, typescript, typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBorder": "#000000",
+    "activityBar.background": "#f0ab00",
+    "activityBar.foreground": "#000000",
+    "activityBarBadge.background": "#000000",
+    "activityBarBadge.foreground": "#f0ab00"
+  },
+  "eslint.workingDirectories": ["./src"],
+  "prettier.configPath": "./prettier.config.js",
+
+}

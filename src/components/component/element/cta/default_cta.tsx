@@ -6,27 +6,40 @@ import Button from './base'
 export const DefaultCTAElement : CTAComponent<CTAElementDataFragment, DefaultCTALayoutProps> = ({ data: { link, text }, layoutProps, className, ...containerProps }) => {
     const { 
         buttonAlign = "auto", 
-        buttonType ="primary", 
+        buttonType = "primary", 
         buttonColor = "default" 
-    } = extractSettings(layoutProps)
-    const cssClasses : (string | undefined)[] = [ "block w-fit", className ] 
+    } = extractSettings(layoutProps);
+    const cssClasses : (string | undefined)[] = [ "tw-flex tw-flex-col tw-min-h-[max(20vh,240px)] tw-justify-center tw-w-full", className ] 
     switch (buttonAlign) {
         case "left":
-            cssClasses.push('ml-0','mr-auto')
+            cssClasses.push('tw-items-start')
             break;
         case "center":
-            cssClasses.push('mx-auto')
+            cssClasses.push('tw-items-center')
             break;
         case "right":
-            cssClasses.push('ml-auto','mr-0')
+            cssClasses.push('tw-items-end')
+            break;
+        default:
+            // Nothing
+            break;
+    }
+    switch (buttonColor) {
+        case "default":
+            case "light":
+            cssClasses.push('tw-bg-grey-20')
+            break;
+ 
+        case "dark":
+            cssClasses.push('tw-bg-blue')
             break;
         default:
             // Nothing
             break;
     }
     
-    return <div { ...containerProps } className='py-4'>
-        <Button href={link} className={ cssClasses.join(' ') } text={text} buttonType={ buttonType } buttonColor={ buttonColor } />
+    return <div { ...containerProps } className={ cssClasses.join(' ')}>
+        <Button href={link} text={text} buttonType={ buttonType } buttonColor={ buttonColor } />
     </div>
 }
 

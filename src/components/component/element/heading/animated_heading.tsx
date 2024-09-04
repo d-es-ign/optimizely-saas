@@ -9,16 +9,16 @@ export const AnimatedHeadingElement : HeadingComponent<HeadingElementDataFragmen
     
     switch (textAlign) {
         case 'left':
-            cssClasses.push('text-left mr-auto')
+            cssClasses.push('tw-text-left tw-mr-auto')
             break
         case 'center':
-            cssClasses.push('text-center mx-auto')
+            cssClasses.push('tw-text-center tw-mx-auto')
             break
         case 'right':
-            cssClasses.push('text-right ml-auto')
+            cssClasses.push('tw-text-right tw-ml-auto')
             break
         case 'justify':
-            cssClasses.push('text-justify')
+            cssClasses.push('tw-text-justify')
             break
         default:
             break;
@@ -44,7 +44,7 @@ export const AnimatedHeadingElement : HeadingComponent<HeadingElementDataFragmen
             break;
     }
 
-    return <div className={ (`${ className } prose prose-h1:text-[72px] prose-p:text-[24px] prose-p:leading-tight ` + cssClasses.join(' ')).trim() } { ...containerProps }>
+    return <div className={ (`${ className } prose prose-h1:tw-text-[72px] prose-p:tw-text-[24px] prose-p:tw-leading-tight ` + cssClasses.join(' ')).trim() } { ...containerProps }>
         <AnimatedText el={ Component } text={ headingText ?? "" } delay={ delay } />
     </div>
 }

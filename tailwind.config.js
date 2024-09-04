@@ -41,8 +41,7 @@ module.exports = {
     },
     fontFamily: {
       sans: '"Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      serif:
-        '"Playfair Display",ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      serif: '"Playfair Display",ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       mono: '"Noto Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
       icon: 'icomoon',
     },

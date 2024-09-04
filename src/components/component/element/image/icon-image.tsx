@@ -12,17 +12,17 @@ export const IconImageElement : ImageComponent<ImageElementDataFragment, IconIma
         roundedCorners="none",
         size="small"
     } = extractSettings(layoutProps)
-    const cssClasses : Array<string> = ["not-prose relative aspect-square"]
+    const cssClasses : Array<string> = ["not-prose tw-relative tw-aspect-square"]
 
     switch (roundedCorners) {
         case 'small':
-            cssClasses.push('rounded')
+            cssClasses.push('tw-rounded')
             break;
         case 'medium':
-            cssClasses.push('rounded-md')
+            cssClasses.push('tw-rounded-md')
             break;
         case 'full':
-            cssClasses.push('rounded-full')
+            cssClasses.push('tw-rounded-full')
             break;
         default:
             // No rounded classes
@@ -31,21 +31,21 @@ export const IconImageElement : ImageComponent<ImageElementDataFragment, IconIma
 
     switch (size) {
         case 'small':
-            cssClasses.push('w-8 h-8')
+            cssClasses.push('tw-w-8 tw-h-8')
             break
         case 'medium':
-            cssClasses.push('w-12 h-12')
+            cssClasses.push('tw-w-12 tw-h-12')
             break
         case 'large':
-            cssClasses.push('w-20 h-20')
+            cssClasses.push('tw-w-20 tw-h-20')
             break
         default:
-            cssClasses.push('w-8 h-8')
+            cssClasses.push('tw-w-8 tw-h-8')
             break
     }
 
     return <div className={ cssClasses.join(' ')} { ...props }>
-        <Image alt={altText ?? ""} src={ imageLink } fill className="object-cover" />
+        <Image alt={altText ?? ""} src={ imageLink } fill className="tw-object-cover" />
     </div>
 }
 

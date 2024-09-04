@@ -14,7 +14,7 @@ export const HeadingElement : CmsComponent<HeadingElementDataFragment, HeadingLa
     if (isAnimatedTemplate(layoutProps)) {
         return <CmsEditable as={AnimatedHeadingElement} cmsId={ contentLink.key } data={ data } layoutProps={ layoutProps } />
     }
-    return <CmsEditable as="div" className="text-5xl p-4 md:p-8 xl:p-10" cmsId={ contentLink.key }>{ data?.headingText ?? ""}</CmsEditable>
+    return <CmsEditable as="div" className="tw-text-5xl tw-p-4 md:tw-p-8 xl:tw-p-10" cmsId={ contentLink.key }>{ data?.headingText ?? ""}</CmsEditable>
 }
 HeadingElement.getDataFragment = () => ['HeadingElementData', HeadingElementDataFragmentDoc]
 

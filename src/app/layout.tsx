@@ -10,6 +10,7 @@ import Header from "../components/organisms/Header/index";
 // Styling
 import { Figtree } from "next/font/google";
 import "./global/index.scss";
+import Head from "next/head";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -26,14 +27,17 @@ type RootLayoutProps = Readonly<PropsWithChildren<{}>>;
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
+
+      <html lang="en">
+    <Head>
       <Script
         src="https://cdn.optimizely.com/js/30057130179.js"
         data-test="script"
-      />
+        />
+        <Script src='foobar'/>
       <Script
         id="gtm-script"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -41,10 +45,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TDNQ3PPP');
-  `,
+          `,
         }}
-      />
-      <html lang="en">
+        // <!-- Google Tag Manager -->
+        />
+        </Head>
+
         <ThemeProvider value={{ theme: "system" }}>
           <Body
             className={`${figtree.className} tw-overflow-x-hidden bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}
@@ -63,6 +69,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </Body>
         </ThemeProvider>
       </html>
-    </>
+
   );
 }
