@@ -157,6 +157,7 @@ module.exports = {
       },
       borderWidth: {
         1: '1px',
+        6: '6px',
       },
       spacing: {
         '4xs': '0.125rem', // 2px
