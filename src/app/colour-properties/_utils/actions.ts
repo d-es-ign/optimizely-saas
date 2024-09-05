@@ -1,7 +1,7 @@
 "use server";
+import { getComplimentaryColours } from "@/server/azure/getComplimentaryColours";
 import { uploadAnImageToBlob } from "@/server/azure/uploadAnImageToBlob";
 import { visionAnalyzeImage } from "@/server/vision/visionAnalyzeImage";
-import { getComplimentaryColours } from "@/server/azure/getComplimentaryColours";
 import { redirect } from "next/navigation";
 
 export async function getComplimentaryColoursAction(formData: FormData) {
@@ -24,6 +24,7 @@ export async function getComplimentaryColoursAction(formData: FormData) {
     if (file.size > 1024 * 1024 * 5) {
       _return.error = "File size is too large.";
     }
+    _return.error = 'test passed';
 
     const blobName = await uploadAnImageToBlob(file);
     if (blobName) {

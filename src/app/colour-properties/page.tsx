@@ -19,7 +19,7 @@ export default function ColourPropertiesPage({
 
   return (
     <div>
-      {blobStoragePath} {JSON.stringify(searchParams)}
+      {/* {blobStoragePath} {JSON.stringify(searchParams)} */}
       <ColoursPageContent
         relatedColoursSection={relatedColoursSection}
         accentColourCard={accentColourCard}
