@@ -1,23 +1,23 @@
-import TextContent from "@/components/atoms/TextContent/TextContent";
-import SiteEnum from "@/components/models/enums/SiteEnum";
-import FlexContent from "@/components/atoms/FlexContent/FlexContent";
-import VariantTypeEnum from "@/components/models/enums/VariantTypeEnum";
-import HeroBlock from "@/components/atoms/HeroBlock/HeroBlock";
-import ContentCard from "@/components/molecules/ContentCard/ContentCard";
-import ContentCards from "../ContentCards/ContentCards";
-import contentCards from "@/utility/mocks/contentCards.mocks";
-import { IContentCard } from "@/components/models/IContentCard";
-import { IContentCards } from "@/components/models/IContentCards";
 import {
   flexContentDummyData,
   heroBlockDummyData,
-  textContent,
-  perfectColors,
   imageCards,
-} from "@/app/colour-properties/_utils/static-data";
-import Button from "@/components/atoms/Button/Button";
-import { portraitImage } from "@/utility/mocks/image.mocks";
-import Image from "@/components/atoms/Image/Image";
+  perfectColors,
+  textContent,
+} from '@/app/colour-properties/_utils/static-data';
+import Button from '@/components/atoms/Button/Button';
+import FlexContent from '@/components/atoms/FlexContent/FlexContent';
+import HeroBlock from '@/components/atoms/HeroBlock/HeroBlock';
+import Image from '@/components/atoms/Image/Image';
+import TextContent from '@/components/atoms/TextContent/TextContent';
+import SiteEnum from '@/components/models/enums/SiteEnum';
+import VariantTypeEnum from '@/components/models/enums/VariantTypeEnum';
+import { IContentCard } from '@/components/models/IContentCard';
+import { IContentCards } from '@/components/models/IContentCards';
+import ContentCard from '@/components/molecules/ContentCard/ContentCard';
+import contentCards from '@/utility/mocks/contentCards.mocks';
+import { portraitImage } from '@/utility/mocks/image.mocks';
+import ContentCards from '../ContentCards/ContentCards';
 
 const ColoursPageContent = ({
   relatedColoursSection,
@@ -31,21 +31,18 @@ const ColoursPageContent = ({
   return (
     <>
       <HeroBlock {...heroBlockDummyData} />
-      <section className="tw-flex tw-gap-8 tw-px-[48px] tw-py-[120px] tw-flex-col xl:tw-flex-row tw-bg-grey-10">
-        <div className="lg:tw-w-[640px] tw-w-full  tw-flex tw-flex-col tw-justify-between">
+      <section className="tw-flex tw-flex-col tw-gap-8 tw-bg-grey-10 tw-px-[48px] tw-py-[120px] xl:tw-flex-row">
+        <div className="tw-flex tw-w-full tw-flex-col tw-justify-between lg:tw-w-[640px]">
           <div>
-            <TextContent
-              textContent={perfectColors.textContent}
-              site={SiteEnum.B2B}
-            />
-            <div className="tw-flex tw-gap-2 tw-pt-6 tw-mb-[40px] xl:tw-mb-[0px]">
+            <TextContent textContent={perfectColors.textContent} site={SiteEnum.B2B} />
+            <div className="tw-mb-[40px] tw-flex tw-gap-2 tw-pt-6 xl:tw-mb-[0px]">
               {perfectColors.cta.map((cta, index) => (
                 <Button
                   as="link"
-                  style={{ width: "100%" }}
-                  modifier={index ? "fill" : "outline"}
+                  style={{ width: '100%' }}
+                  modifier={index ? 'fill' : 'outline'}
                   variant="grey80"
-                  href="/"
+                  href="/home#upload"
                   label={cta.text}
                   key={`${cta.text}-${index}`}
                 />
@@ -70,24 +67,18 @@ const ColoursPageContent = ({
             )}
           </div>
         </div>
-        <div className="tw-ml-auto xl:tw-w-1/2 ">
-          {imageUrl && (
-            <Image
-              width={640}
-              height={750}
-              image={{ ...portraitImage, url: imageUrl }}
-            />
-          )}
+        <div className="tw-ml-auto xl:tw-w-1/2">
+          {imageUrl && <Image width={640} height={750} image={{ ...portraitImage, url: imageUrl }} />}
         </div>
       </section>
-      <section className="tw-pb-[120px] tw-px-[48px] tw-bg-grey-10">
+      <section className="tw-bg-grey-10 tw-px-[48px] tw-pb-[120px]">
         <ContentCards {...relatedColoursSection} />
       </section>
-      <section className="tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-background-beige tw-px-[48px] tw-py-[120px]">
-        <div className="lg:tw-w-[640px] tw-text-center">
+      <section className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center tw-bg-background-beige tw-px-[48px] tw-py-[120px]">
+        <div className="tw-text-center lg:tw-w-[640px]">
           <TextContent textContent={textContent} site={SiteEnum.B2B} />
         </div>
-        <div className="tw-flex tw-gap-sm tw-py-[120px] tw-w-full">
+        <div className="tw-flex tw-w-full tw-gap-sm tw-py-[120px]">
           {imageCards.map((image, index) => (
             <div>
               <Image
@@ -101,7 +92,7 @@ const ColoursPageContent = ({
         </div>
         <FlexContent textContent={flexContentDummyData} />
       </section>
-      <section className="tw-pb-[120px] tw-px-[48px] tw-bg-background-beige">
+      <section className="tw-bg-background-beige tw-px-[48px] tw-pb-[120px]">
         <ContentCards {...contentCards} />
       </section>
     </>

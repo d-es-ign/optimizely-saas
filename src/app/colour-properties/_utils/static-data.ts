@@ -1,6 +1,6 @@
 //TODO: DELETE DUMMY DATA
-import { portraitImage } from "@/utility/mocks/image.mocks";
 import SiteEnum from "@/components/models/enums/SiteEnum";
+import { portraitImage } from "@/utility/mocks/image.mocks";
 
 export const textContent = {
   header: "Classic neutrals",

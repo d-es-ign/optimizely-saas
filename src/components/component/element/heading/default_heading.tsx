@@ -9,7 +9,7 @@ export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment,
   ...containerProps
 }) => {
   const { headingType, showAs, textAlign, transform } = extractSettings(layoutProps);
-  const cssClasses: (string | undefined)[] = [className, 'tw-flex-initial  tw-px-lg'];
+  const cssClasses: (string | undefined)[] = [className, 'tw-flex-initial tw-px-lg'];
   const Component = showAs == 'element' ? 'p' : !headingType || headingType == 'plain' ? 'p' : headingType;
 
   switch (textAlign) {
@@ -41,28 +41,28 @@ export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment,
   }
   switch (headingType) {
     case 'h1':
-      cssClasses.push('tw-font-bold tw-my-0');
+      cssClasses.push('tw-font-serif tw-uppercase tw-my-0');
       cssClasses.push('tw-text-[4.8rem]');
       cssClasses.push('lg:tw-text-[6.4rem]');
       cssClasses.push('xl:tw-text-[7.2rem]');
       break;
     case 'h2':
-      cssClasses.push('tw-font-bold tw-my-0');
+      cssClasses.push('tw-font-serif tw-uppercase tw-my-0');
       cssClasses.push('tw-text-[4.2rem]');
       cssClasses.push('lg:tw-text-[4.8rem]');
       cssClasses.push('xl:tw-text-[6.4rem]');
       break;
     case 'h3':
-      cssClasses.push('tw-font-bold tw-my-0');
+      cssClasses.push('tw-font-serif tw-uppercase tw-my-0');
       cssClasses.push('tw-text-[3.6rem]');
       cssClasses.push('lg:tw-text-[4.2rem]');
       cssClasses.push('xl:tw-text-[4.8rem]');
       break;
     case 'h4':
-      cssClasses.push('tw-font-bold tw-my-0');
-      cssClasses.push('tw-text-[3.6rem]');
-      cssClasses.push('lg:tw-text-[4.2rem]');
-      cssClasses.push('xl:tw-text-[4.8rem]');
+      cssClasses.push('tw-font-serif tw-uppercase tw-font-light tw-my-0');
+      cssClasses.push('tw-text-[3.2rem]');
+      cssClasses.push('lg:tw-text-[3.6rem]');
+      cssClasses.push('xl:tw-text-[4.2rem]');
       break;
     case 'h5':
       cssClasses.push('tw-font-bold tw-my-0');
@@ -81,7 +81,7 @@ export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment,
   const cssClassName = cssClasses.filter((x) => x).join(' ');
 
   return (
-    <div className="tw-mx-auto tw-my-lg tw-w-full tw-max-w-[1440px]">
+    <div className="tw-mx-auto tw-my-xl tw-mb-md tw-w-full tw-max-w-[1440px]">
       <Component className={cssClassName} {...containerProps}>
         {headingText}
       </Component>
