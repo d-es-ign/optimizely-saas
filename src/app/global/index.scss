@@ -31,15 +31,15 @@
   }
 }
 
-.cookie-footer-link #ot-sdk-btn.ot-sdk-show-settings
-{
+.cookie-footer-link #ot-sdk-btn.ot-sdk-show-settings {
   padding: 0;
   border: none;
   background: none;
   color: inherit;
   font-size: inherit;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: inherit;
     border: none;
     background: none;
@@ -48,4 +48,31 @@
 
 .main-content {
   min-height: 60vh;
+}
+
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-gradient {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+.space-active {
+  background: conic-gradient(from var(--gradient-angle), transparent, #031e45);
+  animation: rotate-gradient 5s linear infinite;
+
+  --c: #171717;
+  --p: 40%;
+  background:
+    linear-gradient(var(--c), var(--c)) padding-box,
+    conic-gradient(from var(--gradient-angle), #031e45, #f0ab00 calc(var(--p) * 2)) border-box;
+  border-color: transparent;
+  border-style: solid;
+  aspect-ratio: 1;
+  border-radius: 100%;
 }

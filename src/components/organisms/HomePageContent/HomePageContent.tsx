@@ -1,3 +1,4 @@
+'use client';
 import FlexContent from '@/components/atoms/FlexContent/FlexContent';
 import HeroBlock from '@/components/atoms/HeroBlock/HeroBlock';
 import Text from '@/components/atoms/Text/Text';
@@ -9,6 +10,7 @@ import { portraitImage } from '@/utility/mocks/image.mocks';
 
 import indoors from '@/assets/images/indoors.jpg';
 import outdoors from '@/assets/images/outdoors.jpg';
+import { useEffect, useState } from 'react';
 
 //TODO: DELETE DUMMY DATA
 const textContent = {
@@ -85,6 +87,12 @@ const flexContentDummyData = {
 };
 
 const HomePageContent = () => {
+  const [space, setSpace] = useState<string>();
+
+  useEffect(() => {
+    setSpace(undefined);
+  }, []);
+
   return (
     <>
       <HeroBlock {...heroBlockDummyData} />
@@ -97,19 +105,22 @@ const HomePageContent = () => {
         <FlexContent textContent={flexContentDummyData} />
       </div>
       <section className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center tw-py-[60px]">
-        <Text variant="headline">What are you painting?</Text>
+        <Text variant="headline">1. What are you painting?</Text>
         <div className="tw-flex tw-gap-[64px] tw-pt-[64px]">
-          <div className="tw-w-[140px]">
-            <ImageCard {...imageCards[0]} />
+          <div className="tw-w-[200px]" onClick={() => setSpace('indoors')}>
+            <ImageCard active={space == 'indoors'} {...imageCards[0]} />
           </div>
-          <div className="tw-w-[140px]">
-            <ImageCard {...imageCards[1]} />
+          <div className="tw-w-[200px]" onClick={() => setSpace('outdoors')}>
+            <ImageCard active={space == 'outdoors'} {...imageCards[1]} />
           </div>
         </div>
       </section>
-      <section id="upload" className="tw-mb-[120px] tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center">
+      <section
+        id="upload"
+        className={`${!space ? 'tw-opacity-20' : ''} tw-mb-[120px] tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center`}
+      >
         <Text className="tw-pb-[60px]" variant="headline">
-          What's inspired you?
+          2. What's inspired you?
         </Text>
         <FileUpload {...fileUploadProps} />
       </section>

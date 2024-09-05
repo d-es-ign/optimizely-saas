@@ -24,7 +24,6 @@ export async function getComplimentaryColoursAction(formData: FormData) {
     if (file.size > 1024 * 1024 * 5) {
       _return.error = "File size is too large.";
     }
-    _return.error = 'test passed';
 
     const blobName = await uploadAnImageToBlob(file);
     if (blobName) {
