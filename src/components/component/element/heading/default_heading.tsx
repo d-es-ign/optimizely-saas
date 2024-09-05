@@ -9,11 +9,7 @@ export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment,
   ...containerProps
 }) => {
   const { headingType, showAs, textAlign, transform } = extractSettings(layoutProps);
-  const cssClasses: (string | undefined)[] = [
-    className,
-    'tw-flex-initial',
-    'tw-mx-auto tw-my-lg tw-w-full tw-max-w-[1440px] tw-px-lg',
-  ];
+  const cssClasses: (string | undefined)[] = [className, 'tw-flex-initial  tw-px-lg'];
   const Component = showAs == 'element' ? 'p' : !headingType || headingType == 'plain' ? 'p' : headingType;
 
   switch (textAlign) {
@@ -85,7 +81,7 @@ export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment,
   const cssClassName = cssClasses.filter((x) => x).join(' ');
 
   return (
-    <div className="">
+    <div className="tw-mx-auto tw-my-lg tw-w-full tw-max-w-[1440px]">
       <Component className={cssClassName} {...containerProps}>
         {headingText}
       </Component>

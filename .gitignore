@@ -53,3 +53,4 @@ Thumbs.db
 certificates
 
 .env.backup
+.env.local
