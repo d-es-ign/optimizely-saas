@@ -18,7 +18,7 @@ export const ParagraphElement: CmsComponent<Schema.ParagraphElementDataFragment>
     <div className="tw-mb-lg tw-w-full tw-bg-white tw-py-4xl tw-text-blue">
       <CmsEditable
         as={RichText}
-        className={`tw-mx-auto tw-grid tw-w-full tw-max-w-[1440px] tw-gap-sm tw-text-lg tw-leading-3xl tw-grid-cols-${sections}`}
+        className={`tw-mx-auto tw-grid tw-w-full tw-max-w-[1440px] tw-gap-sm tw-px-lg tw-text-lg tw-leading-3xl tw-grid-cols-${sections}`}
         factory={factory ?? getFactory()}
         text={paragraph?.json}
         cmsId={contentLink.key}

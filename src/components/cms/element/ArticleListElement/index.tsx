@@ -41,7 +41,7 @@ export const ArticleListElement: CmsComponent<ArticleListElementDataFragment> = 
   }
 
   return (
-    <div className="tw-mx-auto tw-my-2xl tw-w-full tw-max-w-[1440px]">
+    <div className="tw-mx-auto tw-my-2xl tw-w-full tw-max-w-[1440px] tw-px-lg">
       <h2 className="tw-mb-xs tw-w-[61%] tw-border-b-4 tw-border-b-yellow tw-pb-xxs tw-font-sans tw-text-3xl tw-font-semibold tw-uppercase">
         Related articles
       </h2>
