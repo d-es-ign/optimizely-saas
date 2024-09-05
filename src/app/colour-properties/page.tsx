@@ -1,5 +1,5 @@
-import ColoursPageContent from "@/components/organisms/ColoursPageContent/ColoursPageContent";
-import { getRelatedColoursSectionData } from "@/app/colour-properties/_utils/getRelatedColoursSectionData";
+import { getRelatedColoursSectionData } from '@/app/colour-properties/_utils/getRelatedColoursSectionData';
+import ColoursPageContent from '@/components/organisms/ColoursPageContent/ColoursPageContent';
 const blobStoragePath = process.env.BLOB_STORAGE_PATH;
 
 export default function ColourPropertiesPage({
@@ -10,8 +10,7 @@ export default function ColourPropertiesPage({
   const relatedColors = searchParams?.relatedColors as string[] | undefined;
   const accentColour = searchParams?.accentColour as string | undefined;
 
-  const { relatedColoursSection, accentColourCard } =
-    getRelatedColoursSectionData(relatedColors, accentColour);
+  const { relatedColoursSection, accentColourCard } = getRelatedColoursSectionData(relatedColors, accentColour);
 
   const img = searchParams?.img as string | undefined;
 
@@ -19,10 +18,13 @@ export default function ColourPropertiesPage({
   // const accentColourSection = getRelatedColoursSectionData(relatedColors);
 
   return (
-    <ColoursPageContent
-      relatedColoursSection={relatedColoursSection}
-      accentColourCard={accentColourCard}
-      imageUrl={imageUrl}
-    />
+    <div>
+      {blobStoragePath} {JSON.stringify(searchParams)}
+      <ColoursPageContent
+        relatedColoursSection={relatedColoursSection}
+        accentColourCard={accentColourCard}
+        imageUrl={imageUrl}
+      />
+    </div>
   );
 }
