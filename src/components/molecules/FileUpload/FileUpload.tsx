@@ -1,13 +1,13 @@
-"use client";
-import Button from "@/components/atoms/Button/Button";
-import LoadingSpinner from "@/components/atoms/LoadingSpinner/LoadingSpinner";
-import Text from "@/components/atoms/Text/Text";
-import replaceValuesInLabel from "@/components/utility/helpers/replaceValuesInLabel";
-import React, { useRef, useState } from "react";
-import { getComplimentaryColoursAction } from "@/app/colour-properties/_utils/actions";
-import UploadIcon from "@/components/atoms/Icon/UploadIcon";
-import SizeEnum from "@/components/models/enums/SizeEnum";
-import { useFormStatus } from "react-dom";
+'use client';
+import { getComplimentaryColoursAction } from '@/app/colour-properties/_utils/actions';
+import Button from '@/components/atoms/Button/Button';
+import UploadIcon from '@/components/atoms/Icon/UploadIcon';
+import LoadingSpinner from '@/components/atoms/LoadingSpinner/LoadingSpinner';
+import Text from '@/components/atoms/Text/Text';
+import SizeEnum from '@/components/models/enums/SizeEnum';
+import replaceValuesInLabel from '@/components/utility/helpers/replaceValuesInLabel';
+import React, { useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 export interface Props {
   readonly addFilesLabel: string;
@@ -30,10 +30,10 @@ export interface Props {
 }
 
 enum FileStatuses {
-  INITIAL = "initial",
-  UPLOADING = "uploading",
-  SUCCESS = "success",
-  FAIL = "fail",
+  INITIAL = 'initial',
+  UPLOADING = 'uploading',
+  SUCCESS = 'success',
+  FAIL = 'fail',
 }
 
 const FileUpload = ({
@@ -42,14 +42,14 @@ const FileUpload = ({
   discardLabel,
   endpoint,
   errorMessage,
-  filesHaveLabel = "Files have",
-  filesHasLabel = "File has",
+  filesHaveLabel = 'Files have',
+  filesHasLabel = 'File has',
   loadingLabel,
-  accept = "*",
+  accept = '*',
   multiple = false,
   submitFileLabel,
   successMessage,
-  title = "Upload file",
+  title = 'Upload file',
   uploadDescription,
   uploadedFileName,
   uploadCallback,
@@ -74,14 +74,14 @@ const FileUpload = ({
       const formData = new FormData();
 
       Array.from(files).forEach((file) => {
-        formData.append("files", file);
+        formData.append('files', file);
       });
 
       try {
-        if (!endpoint) throw new Error("no endpoint setup");
+        if (!endpoint) throw new Error('no endpoint setup');
 
         const response = await fetch(endpoint, {
-          method: "POST",
+          method: 'POST',
           body: formData,
         });
 
@@ -108,7 +108,7 @@ const FileUpload = ({
   // Function to reset the input element
   const handleReset = () => {
     if (hiddenFileInput.current) {
-      hiddenFileInput.current.value = "";
+      hiddenFileInput.current.value = '';
       setFiles(null);
     }
     setStatus(FileStatuses.INITIAL);
@@ -117,10 +117,10 @@ const FileUpload = ({
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <div className=" tw-flex tw-items-center tw-justify-between tw-px-[20px] lg:tw-px-[100px] tw-py-[60px] lg:tw-w-[640px] tw-border-2 tw-border-grey-40 tw-border-dashed">
+    <div className="tw-flex tw-items-center tw-justify-between tw-border-2 tw-border-dashed tw-border-grey-40 tw-px-[20px] tw-py-[60px] lg:tw-w-[640px] lg:tw-px-[100px]">
       <div
         style={{
-          display: status === FileStatuses.UPLOADING ? "none" : "block",
+          display: status === FileStatuses.UPLOADING ? 'none' : 'block',
         }}
       >
         <label htmlFor="file" className="tw-sr-only">
@@ -128,10 +128,7 @@ const FileUpload = ({
         </label>
 
         <Text variant="body-14-semibold">{title}</Text>
-        <Text
-          variant="body-small"
-          className="tw-pb-xs tw-pt-xxs tw-text-grey-70"
-        >
+        <Text variant="body-small" className="tw-pb-xs tw-pt-xxs tw-text-grey-70">
           {uploadDescription}
         </Text>
         <Result
@@ -158,37 +155,24 @@ const FileUpload = ({
             {files ? (
               <>
                 <div className="tw-flex tw-flex-row tw-items-baseline tw-gap-xs">
-                  <Button
-                    label={discardLabel}
-                    variant="grey30"
-                    onClick={handleReset}
-                  />
+                  <Button label={discardLabel} variant="grey30" onClick={handleReset} />
                   {multiple ? (
                     <Button
                       buttonClasses="tw-mt-xs"
                       label={submitFileLabel}
                       onClick={handleUpload}
-                      disabled={
-                        status === FileStatuses.UPLOADING ||
-                        status === FileStatuses.SUCCESS
-                      }
+                      disabled={status === FileStatuses.UPLOADING || status === FileStatuses.SUCCESS}
                     />
                   ) : (
                     files[0] && (
-                      <Text
-                        variant="body-small"
-                        className="tw-hidden tw-text-grey-70 md:tw-block"
-                      >
+                      <Text variant="body-small" className="tw-hidden tw-text-grey-70 md:tw-block">
                         {uploadedFileName + files[0].name}
                       </Text>
                     )
                   )}
                 </div>
                 {files[0] && (
-                  <Text
-                    variant="body-small"
-                    className="tw-pt-4 tw-text-grey-70 md:tw-hidden"
-                  >
+                  <Text variant="body-small" className="tw-pt-4 tw-text-grey-70 md:tw-hidden">
                     {replaceValuesInLabel(uploadedFileName, [files[0].name])}
                   </Text>
                 )}
@@ -196,10 +180,7 @@ const FileUpload = ({
                   <ul className="tw-p-xs">
                     {Array.from(files).map((file) => (
                       <li key={file.name} className="tw-list-disc">
-                        <Text
-                          variant="body-small"
-                          className="tw-pt-xxs tw-text-grey-70"
-                        >
+                        <Text variant="body-small" className="tw-pt-xxs tw-text-grey-70">
                           {file.name}
                         </Text>
                       </li>
@@ -215,20 +196,12 @@ const FileUpload = ({
                       setStatus(FileStatuses.UPLOADING);
                       formRef?.current?.submit();
                     }}
-                    disabled={
-                      status === FileStatuses.UPLOADING ||
-                      status === FileStatuses.SUCCESS
-                    }
+                    disabled={status === FileStatuses.UPLOADING || status === FileStatuses.SUCCESS}
                   />
                 )}
               </>
             ) : (
-              <Button
-                modifier="outline"
-                type="button"
-                label={addFilesLabel}
-                onClick={handleClick}
-              />
+              <Button modifier="outline" type="button" label={addFilesLabel} onClick={handleClick} />
             )}
           </form>
         </div>

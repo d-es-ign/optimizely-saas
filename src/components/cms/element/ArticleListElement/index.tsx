@@ -42,10 +42,14 @@ export const ArticleListElement: CmsComponent<ArticleListElementDataFragment> = 
 
   return (
     <div className="tw-mx-auto tw-my-2xl tw-w-full tw-max-w-[1440px] tw-px-lg">
-      <h2 className="tw-mb-xs tw-w-[61%] tw-border-b-4 tw-border-b-yellow tw-pb-xxs tw-font-sans tw-text-3xl tw-font-semibold tw-uppercase">
-        Related articles
-      </h2>
-      <div className="tw-relative tw-grid tw-grid-cols-1 tw-gap-4xl tw-pb-12 lg:tw-grid-cols-2">
+      {articleCount < 4 && (
+        <h2 className="tw-mb-xs tw-w-[61%] tw-border-b-4 tw-border-b-yellow tw-pb-xxs tw-font-sans tw-text-3xl tw-font-semibold tw-uppercase">
+          Related articles
+        </h2>
+      )}
+      <div
+        className={`tw-relative tw-grid tw-grid-cols-1 tw-gap-4xl tw-pb-12 lg:tw-grid-cols-2 ${articleCount < 4 ? 'lg:tw-grid-cols-2' : ''}`}
+      >
         {articles.map((article) => {
           let authors: string | undefined = undefined;
           const authorList = (article.articleAuthors ?? []).filter(isNotNullOrUndefined);
