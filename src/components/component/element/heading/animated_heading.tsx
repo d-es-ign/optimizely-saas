@@ -1,7 +1,7 @@
 import type { HeadingLayoutProps, AnimatedHeadingLayoutProps, HeadingComponent } from './types'
 import { type HeadingElementDataFragment } from "@/gql/graphql"
 import AnimatedText from "@/components/shared/animated_text"
-import { extractSettings } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings } from "@remkoj/optimizely-cms-react"
 
 export const AnimatedHeadingElement : HeadingComponent<HeadingElementDataFragment, AnimatedHeadingLayoutProps> = ({ data: { headingText }, layoutProps, className, ...containerProps }) => {
     const cssClasses : string[] = []

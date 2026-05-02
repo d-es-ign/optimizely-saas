@@ -1,7 +1,7 @@
 import type AnimatedCTAStyles from './cta.animated.opti-style.json'
 import type DefaultCTAStyles from './cta.default.opti-style.json'
-import type { LayoutProps } from "@remkoj/optimizely-cms-react/components"
-import type { ReactNode } from 'react'
+import type { LayoutProps } from "@remkoj/optimizely-cms-react"
+import type { JSX, ReactNode } from 'react'
 
 export type DefaultCTALayoutProps = LayoutProps<typeof DefaultCTAStyles>
 export type AnimatedCTALayoutProps = LayoutProps<typeof AnimatedCTAStyles>

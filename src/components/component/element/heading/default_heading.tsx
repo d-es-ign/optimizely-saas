@@ -1,5 +1,5 @@
 import { type HeadingElementDataFragment } from '@/gql/graphql';
-import { extractSettings } from '@remkoj/optimizely-cms-react/components';
+import { extractSettings } from '@remkoj/optimizely-cms-react';
 import type { DefaultHeadingLayoutProps, HeadingComponent, HeadingLayoutProps } from './types';
 
 export const DefaultHeadingElement: HeadingComponent<HeadingElementDataFragment, DefaultHeadingLayoutProps> = ({

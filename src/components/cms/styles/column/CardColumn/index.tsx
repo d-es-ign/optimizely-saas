@@ -1,6 +1,6 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import { type CardColumnProps } from "../displayTemplates"
-import { extractSettings } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings } from "@remkoj/optimizely-cms-react"
 import { Card } from "@/components/shared/Card"
 
 export const CardColumn : CmsLayoutComponent<CardColumnProps> = ({ layoutProps, children }) => {

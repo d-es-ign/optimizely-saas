@@ -5,6 +5,9 @@ import { getLabelDictionary } from '@/labels'
 import type { MenuItems, UtilityItems } from './types/headerTypes'
 
 export async function MoseyBankHeader() {
+    if (!process.env.OPTIMIZELY_GRAPH_SINGLE_KEY)
+        return null
+
     const sdk = getSdk()
     const config = getFirstIfExists((await sdk.getHeader())?.menuItems?.items)
     const labels = await getLabelDictionary()

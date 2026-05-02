@@ -31,7 +31,7 @@ const SubNavigation = ({
           opacity: 1,
           x: 0,
           transition: {
-            ease: 'easeInOut',
+            ease: 'easeInOut' as const,
             duration: 0.3,
           },
         },

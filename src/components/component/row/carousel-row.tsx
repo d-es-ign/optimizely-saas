@@ -1,6 +1,6 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import type CarouselRowLayoutProps from './carousel.row.opti-style.json'
-import { extractSettings, type LayoutProps } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings, type LayoutProps } from "@remkoj/optimizely-cms-react"
 import dynamic from 'next/dynamic'
 
 const Carousel = dynamic(() => import("./carousel"), { ssr: true });

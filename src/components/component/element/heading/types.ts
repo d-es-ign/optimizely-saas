@@ -1,7 +1,7 @@
 import type AnimatedHeadingStyles from './animated_heading_styles.opti-style.json'
 import type DefaultHeadingStyles from './heading_styles.opti-style.json'
-import type { LayoutProps } from "@remkoj/optimizely-cms-react/components"
-import type { ReactNode } from 'react'
+import type { LayoutProps } from "@remkoj/optimizely-cms-react"
+import type { JSX, ReactNode } from 'react'
 
 export type DefaultHeadingLayoutProps = LayoutProps<typeof DefaultHeadingStyles>
 export type AnimatedHeadingLayoutProps = LayoutProps<typeof AnimatedHeadingStyles>

@@ -5,7 +5,7 @@ import { type Schema } from "@/gql"
 import Link from "next/link";
 import { linkDataToUrl } from '@/components/shared/cms_link'
 import { CmsImage } from '@/components/shared/cms_image'
-import { RichText, DefaultComponents } from '@remkoj/optimizely-cms-react/components'
+import { RichText, RichTextComponentDictionary as DefaultComponents } from '@remkoj/optimizely-cms-react'
 import { DefaultComponentFactory } from "@remkoj/optimizely-cms-react";
 
 type PromoItemProps = Schema.CardBlockDataFragment

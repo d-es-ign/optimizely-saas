@@ -2,7 +2,7 @@ import { CmsPage, getServerClient } from '@remkoj/optimizely-cms-nextjs'
 import createFactory from '@/components'
 import { getContentByPath } from '@/gql'
 
-const { CmsPage:OptimizelyPage, generateMetadata, generateStaticParams } = CmsPage.createPage(createFactory(), {
+const { CmsPage:OptimizelyPage, generateMetadata, generateStaticParams: generateOptimizelyStaticParams } = CmsPage.createPage(createFactory(), {
     //@ts-expect-error We have the actual types on this query, not on the generic one
     getContentByPath,
     client: () => {
@@ -18,5 +18,13 @@ export const dynamic = "force-static"; // Make sure we cache pages
 export const dynamicParams = true; // Allow new pages to be resolved without rebuilding the site
 export const revalidate = false; // Keep the cache untill manually revalidated using the Webhook
 export const fetchCache = "default-cache"; // Cache fetch results by default
-export { generateStaticParams, generateMetadata };
+
+export async function generateStaticParams() {
+    if (!process.env.OPTIMIZELY_GRAPH_SINGLE_KEY)
+        return []
+
+    return generateOptimizelyStaticParams()
+}
+
+export { generateMetadata };
 export default OptimizelyPage;

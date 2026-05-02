@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useMemo, useId, type FunctionComponent } from "react";
+import { useContext, useMemo, useId, type FunctionComponent, type JSX } from "react";
 import { HeaderContext } from "../_header";
 import { contentLinkToString } from "@remkoj/optimizely-graph-client/utils";
 import { type Schema } from "@/gql"

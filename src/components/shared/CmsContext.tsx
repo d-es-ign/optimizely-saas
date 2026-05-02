@@ -15,6 +15,7 @@ interface ClientContext extends GenericContext {
 const OptimizelyCmsContext = createContext<ClientContext>({
     factory: defaultClientFactory,
     inEditMode: false,
+    inPreviewMode: false,
     isDebug: false,
     isDebugOrDevelopment: false,
     isDevelopment: false
@@ -42,6 +43,7 @@ export const OptimizelyCmsProvider : FunctionComponent<ProviderProps> = ({ child
         client,
         factory,
         inEditMode: false,
+        inPreviewMode: false,
         isDebug: debug ?? false,
         isDevelopment: development ?? false,
         isDebugOrDevelopment: (debug ?? false) || (development ?? false)

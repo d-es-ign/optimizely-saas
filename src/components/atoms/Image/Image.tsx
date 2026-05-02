@@ -17,7 +17,7 @@ import {
 interface Props {
   readonly aspectRatio?: number;
   readonly classes?: string;
-  readonly containerRef?: RefObject<HTMLElement>;
+  readonly containerRef?: RefObject<HTMLElement | null>;
   readonly height?: number; // manually set height - only effective when width is set
   readonly image: IImage;
   readonly imageClasses?: string;

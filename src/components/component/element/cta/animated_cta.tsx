@@ -1,6 +1,6 @@
 import type { CTALayoutProps, AnimatedCTALayoutProps, CTAComponent } from './types'
 import { type CTAElementDataFragment } from "@/gql/graphql"
-import { extractSettings } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings } from "@remkoj/optimizely-cms-react"
 import Animate from '@/components/shared/animation'
 import Button from './base'
 

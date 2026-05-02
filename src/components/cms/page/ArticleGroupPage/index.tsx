@@ -3,7 +3,7 @@ import { ArticleGroupPageDataFragmentDoc, type ArticleGroupPageDataFragment } fr
 import { getArticles } from "./api";
 import { CmsImage } from "@/components/shared/cms_image";
 import { Button } from "@/components/shared/button";
-import { RichText } from "@remkoj/optimizely-cms-react/components";
+import { RichText } from "@remkoj/optimizely-cms-react";
 import { getServerContext, CmsEditable, CmsContentArea } from "@remkoj/optimizely-cms-react/rsc";
 import { getLabel } from "@/labels";
 import { linkDataToUrl } from '@/components/shared/cms_link'

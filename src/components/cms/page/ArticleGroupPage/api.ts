@@ -1,7 +1,7 @@
 import { getSdk } from "@/sdk";
 import { localeToGraphLocale } from "@remkoj/optimizely-graph-client";
 import { type LinkDataFragment, type IContentDataFragment, type IContentInfoFragment, type Locales, type ReferenceDataFragment } from "@/gql/graphql";
-import { type NodeInput } from "@remkoj/optimizely-cms-react/components";
+import { type NodeInput } from "@remkoj/optimizely-cms-react";
 
 export type ArticleListItem = {
     key: string

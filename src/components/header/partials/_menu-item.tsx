@@ -1,6 +1,6 @@
 'use client'
 
-import { type FunctionComponent } from "react"
+import { type FunctionComponent, type JSX } from "react"
 import { type Schema } from "@/gql"
 import dynamic from 'next/dynamic'
 import { CmsLink } from '@/components/shared/cms_link'

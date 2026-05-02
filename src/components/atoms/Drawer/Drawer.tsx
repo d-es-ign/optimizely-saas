@@ -64,13 +64,8 @@ const Drawer = ({
               className="tw-z-50"
               onCloseCallback={() => setIsOpen(false)}
             />
-            <motion.aside
+            <div
               ref={targetRef}
-              variants={slideIn}
-              initial="exit"
-              animate="animate"
-              exit="exit"
-              transition={slideTransition}
               key="drawer"
               role="complementary"
               className={twMerge(
@@ -80,22 +75,30 @@ const Drawer = ({
               )}
               tabIndex={0}
             >
-              <div className="tw-relative tw-h-full tw-px-xs tw-py-5 md:tw-px-md md:tw-py-sm">
-                <div className="tw-mb-sm tw-flex">
-                  <button
-                    type="button"
-                    aria-label="close"
-                    className="tw-absolute tw-right-xs tw-top-5 tw-z-10 md:tw-right-md md:tw-top-sm"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Icon name="cross" className="tw-text-2xl" size="1.5rem" />
-                  </button>
+              <motion.div
+                variants={slideIn}
+                initial="exit"
+                animate="animate"
+                exit="exit"
+                transition={slideTransition}
+              >
+                <div className="tw-relative tw-h-full tw-px-xs tw-py-5 md:tw-px-md md:tw-py-sm">
+                  <div className="tw-mb-sm tw-flex">
+                    <button
+                      type="button"
+                      aria-label="close"
+                      className="tw-absolute tw-right-xs tw-top-5 tw-z-10 md:tw-right-md md:tw-top-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Icon name="cross" className="tw-text-2xl" size="1.5rem" />
+                    </button>
+                  </div>
+                  <div ref={contentRef} onClick={stopPropagation}>
+                    {children}
+                  </div>
                 </div>
-                <div ref={contentRef} onClick={stopPropagation}>
-                  {children}
-                </div>
-              </div>
-            </motion.aside>
+              </motion.div>
+            </div>
           </>
         </Portal>
       )}

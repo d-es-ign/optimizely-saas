@@ -6,7 +6,7 @@ import { RefObject, useEffect } from 'react';
 const useModal = (
   isOpen: boolean,
   setIsOpen: (isOpen: boolean) => void,
-  targetRef: RefObject<HTMLDivElement>
+  targetRef: RefObject<HTMLDivElement | null>
 ) => {
   useEffect(() => {
     if (typeof window === 'undefined' || !targetRef.current) {

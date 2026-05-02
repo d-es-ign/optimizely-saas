@@ -1,6 +1,6 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import type DefaultRowStyles from './default.row.opti-style.json'
-import { extractSettings, type LayoutProps } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings, type LayoutProps } from "@remkoj/optimizely-cms-react"
 
 export const DefaultRow : CmsLayoutComponent<LayoutProps<typeof DefaultRowStyles>> = ({ layoutProps, children }) => {
     const cssClasses : string[] = ['flex-1', 'flex', 'flex-col', 'flex-nowrap', 'vb:row','vb:default-row']

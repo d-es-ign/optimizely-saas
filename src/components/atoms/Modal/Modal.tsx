@@ -24,27 +24,30 @@ const Modal = ({ children, isOpen, setIsOpen }: PropsWithChildren<IModal>) => {
 
   return isOpen ? (
     <Portal key="portal" mountId="portal-mount">
-      <motion.div
+      <div
         id="page-modal"
         role="dialog"
         aria-modal
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isOpen ? 1 : 0 }}
-        transition={fadeTransition}
-        exit={{ height: 'auto' }}
         onClick={() => setIsOpen(false)}
         ref={targetRef}
         tabIndex={0}
         className="tw-fixed tw-inset-0 tw-z-max tw-overflow-scroll tw-bg-black/80 tw-outline-none"
       >
-        <div
-          className="tw-grid-container"
-          onClick={stopPropagation}
-          ref={contentRef}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isOpen ? 1 : 0 }}
+          transition={fadeTransition}
+          exit={{ height: 'auto' }}
         >
-          {children}
-        </div>
-      </motion.div>
+          <div
+            className="tw-grid-container"
+            onClick={stopPropagation}
+            ref={contentRef}
+          >
+            {children}
+          </div>
+        </motion.div>
+      </div>
     </Portal>
   ) : null;
 };

@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { A11y, Keyboard, Navigation } from 'swiper/modules';
 import { Swiper, SwiperProps } from 'swiper/react';
-import 'swiper/scss';
-import 'swiper/scss/a11y';
-import 'swiper/scss/autoplay';
-import 'swiper/scss/effect-fade';
-import 'swiper/scss/keyboard';
+import 'swiper/css';
+import 'swiper/css/a11y';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
+import 'swiper/css/keyboard';
 import { SwiperModule } from 'swiper/types';
 
 interface Props extends SwiperProps {

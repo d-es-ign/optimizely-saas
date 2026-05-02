@@ -1,5 +1,5 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
-import { extractSettings } from "@remkoj/optimizely-cms-react/components"
+import { extractSettings } from "@remkoj/optimizely-cms-react"
 import { type DefaultColumnProps } from "../displayTemplates"
 
 export const DefaultColumn : CmsLayoutComponent<DefaultColumnProps> = ({ layoutProps, children }) => {

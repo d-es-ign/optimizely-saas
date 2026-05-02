@@ -1,5 +1,5 @@
 import { type CTAElementDataFragment } from '@/gql/graphql';
-import { extractSettings } from '@remkoj/optimizely-cms-react/components';
+import { extractSettings } from '@remkoj/optimizely-cms-react';
 import Button from './base';
 import type { CTAComponent, CTALayoutProps, DefaultCTALayoutProps } from './types';
 

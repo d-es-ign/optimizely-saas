@@ -1,7 +1,7 @@
 import type IconImageStyles from './image.icon.opti-style.json'
 import type DefaultImageStyles from './image.default.opti-style.json'
-import type { LayoutProps } from "@remkoj/optimizely-cms-react/components"
-import type { DOMAttributes, ReactNode } from 'react'
+import type { LayoutProps } from "@remkoj/optimizely-cms-react"
+import type { DOMAttributes, JSX, ReactNode } from 'react'
 import type { MotionProps } from "framer-motion"
 
 export type DefaultImageLayoutProps = LayoutProps<typeof DefaultImageStyles>

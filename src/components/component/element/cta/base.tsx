@@ -1,7 +1,7 @@
 import Button from "@/components/shared/button"
 import { type LinkDataFragment } from "@/gql/graphql"
 import Link from 'next/link'
-import { type ComponentProps } from "react"
+import { type ComponentProps, type JSX } from "react"
 
 export type BaseCTAProps = { 
     href?: LinkDataFragment | null,

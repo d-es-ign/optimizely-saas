@@ -2,7 +2,7 @@ import { gql, type Schema } from '@/gql';
 import { type CmsComponent } from '@remkoj/optimizely-cms-react';
 import { getFactory, getServerContext } from '@remkoj/optimizely-cms-react/rsc';
 
-import { RichText } from '@remkoj/optimizely-cms-react/components';
+import { RichText } from '@remkoj/optimizely-cms-react';
 import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc';
 
 const COLUMN_CLASSES = 'tw-grid-cols-1 tw-grid-cols-2 tw-grid-cols-3 tw-grid-cols-4 tw-grid-cols-5';

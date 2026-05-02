@@ -2,7 +2,7 @@ import { type ImageElementDataFragment } from '@/gql/graphql';
 import 'server-only';
 //import Image from 'next/image'
 import Animation from '@/components/shared/animation';
-import { extractSettings } from '@remkoj/optimizely-cms-react/components';
+import { extractSettings } from '@remkoj/optimizely-cms-react';
 
 // To be moved to library
 import Image from '@/components/shared/cms_image';

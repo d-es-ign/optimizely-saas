@@ -1,7 +1,7 @@
 import { CardBlockDataFragmentDoc, type CardBlockDataFragment, type ButtonBlockPropertyDataFragment, type ButtonBlockDataFragment } from "@/gql/graphql";
 import Image from '@/components/shared/cms_image'
 import { CmsEditable, CmsComponent } from "@remkoj/optimizely-cms-react/rsc";
-import { RichText } from "@remkoj/optimizely-cms-react/components";
+import { RichText } from "@remkoj/optimizely-cms-react";
 import AnimatedImage from "./motion";
 import ButtonBlock from '@/components/component/block/button_block'
 

@@ -1,12 +1,12 @@
 export const slideTransition = {
   duration: 0.8,
-  ease: [0.74, 0, 0.19, 1.02],
+  ease: [0.74, 0, 0.19, 1.02] as const,
 };
 
 export const fadeTransition = {
   delay: 0.15,
   duration: 0.3,
-  ease: 'easeIn',
+  ease: 'easeIn' as const,
 };
 
 export const fadeInUp = {
@@ -15,7 +15,7 @@ export const fadeInUp = {
     y: 50,
     transition: {
       duration: 1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
   visible: {
@@ -23,7 +23,7 @@ export const fadeInUp = {
     y: 0,
     transition: {
       duration: 1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -33,14 +33,14 @@ export const fadeIn = {
     opacity: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
   visible: {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 };

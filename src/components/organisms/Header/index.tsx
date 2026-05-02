@@ -6,6 +6,10 @@ import { ILink } from "../../models/ILink";
 import { ContentReference } from "../../../gql/graphql";
 
 export async function Header() {
+  if (!process.env.OPTIMIZELY_GRAPH_SINGLE_KEY) {
+    return <HeaderNavigation {...headerData} animation={true} featuredContentText="" secondaryLinks={[]} logo="" />;
+  }
+
   const sdk = getSdk();
   const config = getFirstIfExists((await sdk.getHeader())?.menuItems?.items);
   if (!config) {

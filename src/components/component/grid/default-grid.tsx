@@ -1,7 +1,7 @@
 import { CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
 import type DefaultGridStyles from './default.grid.opti-style.json'
-import { type LayoutProps, extractSettings } from "@remkoj/optimizely-cms-react/components"
+import { type LayoutProps, extractSettings } from "@remkoj/optimizely-cms-react"
 
 type DefaultGridLayout = LayoutProps<typeof DefaultGridStyles>
 

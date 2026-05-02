@@ -2,8 +2,7 @@
 import { cache } from 'react'
 
 // Get the parts from the Optimizely CMS SDK
-import { getFactory, setFactory } from '@remkoj/optimizely-cms-react'
-import { DefaultComponents } from '@remkoj/optimizely-cms-react/components'
+import { getFactory, RichTextComponentDictionary as DefaultComponents } from '@remkoj/optimizely-cms-react/rsc'
 
 // Get the implementation parts
 import { prefixDictionaryEntries } from "@/components/utils"
@@ -21,7 +20,6 @@ export const getComponentFactory = cache(() => {
     factory.registerAll(components)
     factory.registerAll(DefaultComponents)
     factory.registerAll(richText) // Register the rich text components after the defaults to override them
-    setFactory(factory)
     return factory
 })
 

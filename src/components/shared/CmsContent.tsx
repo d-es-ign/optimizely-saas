@@ -10,7 +10,7 @@ import { type CmsContentProps } from '@remkoj/optimizely-cms-react/rsc'
 // Relative
 import useOptimizelyCms from './CmsContext'
 
-export const CmsContent : FunctionComponent<CmsContentProps> = ({ contentLink: rawContentLink, contentType: rawContentType, fragmentData, contentTypePrefix }, context) =>
+export const CmsContent : FunctionComponent<CmsContentProps> = ({ contentLink: rawContentLink, contentType: rawContentType, fragmentData, contentTypePrefix }) =>
 {
     const contentLink = normalizeContentLink(rawContentLink)
     const isInline = isInlineContentLink(contentLink)

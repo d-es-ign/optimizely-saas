@@ -83,7 +83,7 @@ const PageTitle = ({
       transition: {
         staggerChildren: 0.05,
         duration: 0.5,
-        ease: 'easeInOut',
+        ease: 'easeInOut' as const,
       },
     },
   };

@@ -86,7 +86,7 @@ const Navigation = forwardRef(
     const transition = {
       delay: 0.15,
       duration: 1.1,
-      ease: [0.74, 0, 0.19, 1.02],
+      ease: [0.74, 0, 0.19, 1.02] as const,
     };
 
     return (

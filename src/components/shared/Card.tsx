@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from "react";
+import { type JSX, type PropsWithChildren } from "react";
 
 type AllowedElements = keyof Omit<JSX.IntrinsicElements, 'svg'>
 export type CardProps<E extends AllowedElements> = PropsWithChildren<{

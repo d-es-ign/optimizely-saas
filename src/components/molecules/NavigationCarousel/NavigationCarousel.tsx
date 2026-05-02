@@ -4,7 +4,7 @@ import Text from '@/components/atoms/Text/Text';
 import SiteEnum from '@/components/models/enums/SiteEnum';
 import useBreakpoint from '@/components/utility/hooks/useBreakpoint';
 import classNames from 'classnames';
-import { PropsWithChildren, useState } from 'react';
+import { type JSX, PropsWithChildren, useState } from 'react';
 import slugify from 'slugify';
 import SwiperType from 'swiper';
 import { Pagination } from 'swiper/modules';

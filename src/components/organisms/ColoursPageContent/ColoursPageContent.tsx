@@ -16,6 +16,7 @@ import { IContentCard } from '@/components/models/IContentCard';
 import { IContentCards } from '@/components/models/IContentCards';
 import ContentCard from '@/components/molecules/ContentCard/ContentCard';
 import contentCards from '@/utility/mocks/contentCards.mocks';
+import { Suspense } from 'react';
 import { portraitImage } from '@/utility/mocks/image.mocks';
 import ContentCards from '../ContentCards/ContentCards';
 
@@ -30,7 +31,9 @@ const ColoursPageContent = ({
 }) => {
   return (
     <>
-      <HeroBlock {...heroBlockDummyData} />
+      <Suspense fallback={null}>
+        <HeroBlock {...heroBlockDummyData} />
+      </Suspense>
       <section className="tw-flex tw-flex-col tw-gap-8 tw-bg-grey-10 tw-px-[48px] tw-py-[120px] xl:tw-flex-row">
         <div className="tw-flex tw-w-full tw-flex-col tw-justify-between lg:tw-w-[640px]">
           <div>

@@ -37,7 +37,7 @@ export default function Header({ menuItems, utilityItems, logoItem, darkLogoItem
   const secondaryMenuRef = useRef<HTMLUListElement>(null);
   const [currentMenu, setCurrentMenu] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const mouseLeaveTimer = useRef<undefined | NodeJS.Timeout>();
+  const mouseLeaveTimer = useRef<undefined | NodeJS.Timeout>(undefined);
 
   const headerContext = {
     menuItems,
