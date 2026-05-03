@@ -3,7 +3,6 @@ import createFactory from '@/components'
 import { getContentByPath } from '@/gql'
 
 const { CmsPage:OptimizelyPage, generateMetadata, generateStaticParams: generateOptimizelyStaticParams } = CmsPage.createPage(createFactory(), {
-    //@ts-expect-error We have the actual types on this query, not on the generic one
     getContentByPath,
     client: () => {
         const client = getServerClient()
