@@ -1,15 +1,14 @@
 import { OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs"
 import { ArticlePageDataFragmentDoc, type ArticlePageDataFragment } from "@/gql/graphql"
 import { getSdk } from '@/sdk'
-import { CmsEditable, getServerContext } from "@remkoj/optimizely-cms-react/rsc"
+import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc"
 import { getLabel } from "@/labels"
 import { RichText } from "@remkoj/optimizely-cms-react"
 import { CmsImage } from '@/components/shared/cms_image'
 import { DateDisplay } from "@/components/shared/date"
 
-export const ArticlePagePage : CmsComponent<ArticlePageDataFragment> = async ({ data, contentLink }) => 
+export const ArticlePagePage : CmsComponent<ArticlePageDataFragment> = async ({ data, contentLink, ctx }) => 
 {
-    const { factory } = getServerContext()
     const andLabel = await getLabel("and", { locale: contentLink.locale, fallback: "and" })
     const byLabel = await getLabel("By", { locale: contentLink.locale, fallback: "By" })
     const publishedLabel = await getLabel("Published on", { locale: contentLink.locale, fallback: "Published on" })
@@ -32,7 +31,7 @@ export const ArticlePagePage : CmsComponent<ArticlePageDataFragment> = async ({ 
                     <CmsEditable as="h1" cmsFieldName="articleTitle">{ data.articleTitle }</CmsEditable>
                     <CmsEditable as="div" cmsFieldName="articleAuthors" className="font-bold text-people-eater -mt-8">{ byLabel } { authors }</CmsEditable>
                     <div className="-mb-8">{ publishedLabel }: <DateDisplay value={ articleDate } /></div>
-                    <CmsEditable as={ RichText } cmsFieldName="articleBody" text={ data.articleBody?.json } factory={ factory } />
+                    <CmsEditable as={ RichText } cmsFieldName="articleBody" text={ data.articleBody?.json } ctx={ ctx } />
                 </div>
             </div>
         </div>

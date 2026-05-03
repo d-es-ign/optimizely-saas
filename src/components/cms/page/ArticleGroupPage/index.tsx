@@ -4,7 +4,7 @@ import { getArticles } from "./api";
 import { CmsImage } from "@/components/shared/cms_image";
 import { Button } from "@/components/shared/button";
 import { RichText } from "@remkoj/optimizely-cms-react";
-import { getServerContext, CmsEditable, CmsContentArea } from "@remkoj/optimizely-cms-react/rsc";
+import { CmsEditable, CmsContentArea } from "@remkoj/optimizely-cms-react/rsc";
 import { getLabel } from "@/labels";
 import { linkDataToUrl } from '@/components/shared/cms_link'
 import { Card, type ColorOptions } from '@/components/shared/Card'
@@ -12,10 +12,9 @@ import { Card, type ColorOptions } from '@/components/shared/Card'
 const cssClasses : Array<ColorOptions> = [ "white", "blue", "dark_blue", "orange", "green", "red", "purple" ]
 const buttonColor : Array<"dark" | "light"> = [ "dark", "light", "light", "dark", "dark", "light", "light" ]
 
-export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> = async ({ data, contentLink }) => {
+export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> = async ({ data, contentLink, ctx }) => {
     
     const articles = contentLink.key ? await getArticles(contentLink.key, contentLink.locale) : { total: 0, items: []}
-    const { factory } = getServerContext()
     const continueReading = await getLabel("Continue reading", { fallback: "Continue reading"})
 
     return <div className="outer-padding main-content">
@@ -26,7 +25,7 @@ export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> =
                         { data.articleGroupTitle ?? ''}
                     </CmsEditable>
                 </div>
-                <CmsEditable as={ RichText } text={ data.articleGroupIntro?.json } cmsFieldName="articleGroupIntro" factory={ factory } className="prose mx-auto" />
+                <CmsEditable as={ RichText } text={ data.articleGroupIntro?.json } cmsFieldName="articleGroupIntro" ctx={ ctx } className="prose mx-auto" />
                 <CmsContentArea items={ data.MainContent } fieldName="MainContent" className="w-full mt-[32pt]" />
             </div>
             <div className="columns-1 md:columns-1 lg:columns-2 xl:columns-3 gap-8 mb-[24pt]">
@@ -38,7 +37,7 @@ export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> =
                         <CmsImage src={ item.image } alt="Hero image" fill className="object-cover not-prose" />
                     </div>
                     <div className="font-bold text-4xl py-6">{ item.title }</div>
-                    <RichText as="div" text={ item.intro } factory={ factory } className="prose max-w-none" />
+                        <RichText as="div" text={ item.intro } ctx={ ctx } className="prose max-w-none" />
                     <div className="pt-6">
                         <Button url={ url } buttonVariant="default" buttonType="secondary" buttonColor={ buttonColor[cssClassId] }>{ continueReading }</Button>
                     </div>

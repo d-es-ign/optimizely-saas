@@ -12,14 +12,13 @@ import { getSdk } from '@/sdk';
 import { CmsContentLink } from '@remkoj/optimizely-cms-nextjs/components';
 import { type CmsComponent } from '@remkoj/optimizely-cms-react';
 import { RichText } from '@remkoj/optimizely-cms-react';
-import { getServerContext } from '@remkoj/optimizely-cms-react/rsc';
 import 'server-only';
 
 export const ArticleListElement: CmsComponent<ArticleListElementDataFragment> = async ({
   data: { articleListCount = 3 },
   contentLink: { locale },
+  ctx,
 }) => {
-  const { factory } = getServerContext();
   const sdk = getSdk();
   const articleCount = articleListCount || 3;
   const articles = (
@@ -81,7 +80,7 @@ export const ArticleListElement: CmsComponent<ArticleListElementDataFragment> = 
                   <h3 className="tw-my-0 tw-mt-[16px] tw-pb-xs tw-font-serif tw-text-2xl">
                     {article?.articleTitle ?? ''}
                   </h3>
-                  {article?.articleSummary && <RichText factory={factory} text={article?.articleSummary?.json} />}
+                  {article?.articleSummary && <RichText ctx={ctx} text={article?.articleSummary?.json} />}
                   <div className="tw-mt-[16px] tw-flex tw-justify-between">
                     <p className="tw-text-pale-sky tw-my-0 tw-text-[12px]">
                       {byLabel} {authors ? authors : 'Jotun'}
