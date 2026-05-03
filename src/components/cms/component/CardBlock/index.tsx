@@ -9,7 +9,7 @@ import ButtonBlock from '@/components/component/block/button_block'
  * Card Component
  * Reusable card component
  */
-export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data: { layout: imageLayout = "before", image, heading = "", subheading = "", description = {json: null}, color = "blue", link: button, icon }, inEditMode }) => {
+export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data: { layout: imageLayout = "before", image, heading = "", subheading = "", description = {json: null}, color = "blue", link: button, icon }, inEditMode, ctx }) => {
     const additionalClasses: string[] = [];
     const innerClasses: string[] = [];
     const buttonClasses : string[] = [];
@@ -62,7 +62,7 @@ export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data:
             { (heading || inEditMode) && <CmsEditable as="h2" className="tw-text-xl tw-my-[20px]" cmsFieldName="CardHeading">{ heading }</CmsEditable> }
             { (subheading || inEditMode) && <CmsEditable as="h3" className="tw-text-l tw-my-[20px]" cmsFieldName="CardSubHeading">{ subheading }</CmsEditable> }
             </div>
-            { (description || inEditMode) && <CmsEditable as={RichText} className="tw-text-sm" cmsFieldName="CardDescription" text={ description?.json } /> }
+            { (description || inEditMode) && <CmsEditable as={RichText} ctx={ctx} className="tw-text-sm" cmsFieldName="CardDescription" text={ description?.json } /> }
             { button && <CmsEditable as={ButtonBlock} cmsFieldName="CardButton" contentLink={{ key: null }} data={{
                 ...button,
                 __typename: undefined,          // Remove data type, so only data fields will be matched
