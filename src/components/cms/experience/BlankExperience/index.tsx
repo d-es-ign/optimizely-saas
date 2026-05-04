@@ -3,11 +3,11 @@ import { type BlankExperienceDataFragment, type ExperienceDataFragment, type May
 import { OptimizelyComposition, isNode, CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
 import { getSdk } from '@/sdk'
 
-export const BlankExperience : OptimizelyNextPage<BlankExperienceDataFragment> = ({ data }) => 
+export const BlankExperience : OptimizelyNextPage<BlankExperienceDataFragment> = ({ data, ctx }) => 
 {
     const composition = (data as ExperienceDataFragment).composition as Maybe<ICompositionNode>
-    return <CmsEditable as="main" cmsFieldName="unstructuredData" className="flex-grow tw-overflow-x-hidden main-content">
-        { composition && isNode(composition) && <OptimizelyComposition node={composition} /> }
+    return <CmsEditable as="main" ctx={ctx} cmsFieldName="unstructuredData" className="flex-grow tw-overflow-x-hidden main-content">
+        { composition && isNode(composition) && <OptimizelyComposition ctx={ctx} node={composition} /> }
     </CmsEditable>
 }
 BlankExperience.displayName = "BlankExperience"

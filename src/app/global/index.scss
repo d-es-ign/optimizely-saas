@@ -1,10 +1,10 @@
+/* Add in other global styles within ./scss here where necessary */
+@use './scss/grid';
+@use './scss/typography';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Add in other global @import types within ./scss here where necessary */
-@import './scss/grid.scss';
-@import './scss/typography.scss';
 
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */

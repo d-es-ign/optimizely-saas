@@ -1,11 +1,12 @@
 import { CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
 import type DefaultGridStyles from './default.grid.opti-style.json'
-import { type LayoutProps, extractSettings } from "@remkoj/optimizely-cms-react"
+import { type LayoutProps } from "@remkoj/optimizely-cms-react"
+import { extractSettings } from '@remkoj/optimizely-cms-react/rsc'
 
 type DefaultGridLayout = LayoutProps<typeof DefaultGridStyles>
 
-export const DefaultGridComponent : CmsLayoutComponent<DefaultGridLayout> = ({ contentLink, layoutProps, children }) =>
+export const DefaultGridComponent : CmsLayoutComponent<DefaultGridLayout> = ({ contentLink, layoutProps, children, ctx }) =>
 {
     let className = undefined
     const { 
@@ -37,7 +38,7 @@ export const DefaultGridComponent : CmsLayoutComponent<DefaultGridLayout> = ({ c
             break
     }
     
-    return <CmsEditable as="div" className={ `relative ${ className } flex flex-col flex-nowrap justify-start vb:grid` } cmsId={ contentLink.key }>{ children }</CmsEditable>
+    return <CmsEditable as="div" ctx={ctx} className={ `relative ${ className } flex flex-col flex-nowrap justify-start vb:grid` } cmsId={ contentLink.key }>{ children }</CmsEditable>
 }
 
 export default DefaultGridComponent

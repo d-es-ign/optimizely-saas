@@ -5,28 +5,51 @@ import elementComponents from "./element";
 import experienceComponents from "./experience";
 import pageComponents from "./page";
 import nodeComponents from "./styles"
+import NonRenderableCmsContent from './non-renderable'
+import { prefixDictionaryEntries } from '@/components/utils'
 
-prefixDictionaryEntries(componentComponents, 'Component');
-prefixDictionaryEntries(elementComponents, 'Element');
-prefixDictionaryEntries(elementComponents, 'Component'); // Elements are a subtype of Component
-prefixDictionaryEntries(experienceComponents, 'Experience');
-prefixDictionaryEntries(experienceComponents, 'Page'); // Experiences are a subtype of Page
-prefixDictionaryEntries(pageComponents, 'Page');
-prefixDictionaryEntries(nodeComponents, 'Component'); // Nodes are considered components as well
+const componentAliases = withPrefix(componentComponents, 'Component')
+const elementAliases = withPrefix(elementComponents, 'Element')
+const elementComponentAliases = withPrefix(elementComponents, 'Component')
+const experienceAliases = withPrefix(experienceComponents, 'Experience')
+const experiencePageAliases = withPrefix(experienceComponents, 'Page')
+const pageAliases = withPrefix(pageComponents, 'Page')
+const nodeAliases = withPrefix(nodeComponents, 'Component')
 
 export const cmsComponentDictionary : ComponentTypeDictionary = [
+    {
+        type: 'Dictionary',
+        component: NonRenderableCmsContent,
+    },
+    {
+        type: 'HeaderBlock',
+        component: NonRenderableCmsContent,
+    },
+    {
+        type: 'WebsiteFooter',
+        component: NonRenderableCmsContent,
+    },
+    {
+        type: 'Colour',
+        component: NonRenderableCmsContent,
+    },
     ...componentComponents,
     ...elementComponents,
     ...experienceComponents,
     ...pageComponents,
-    ...nodeComponents
+    ...nodeComponents,
+    ...componentAliases,
+    ...elementAliases,
+    ...elementComponentAliases,
+    ...experienceAliases,
+    ...experiencePageAliases,
+    ...pageAliases,
+    ...nodeAliases
 ]
 
 export default cmsComponentDictionary
-function prefixDictionaryEntries(list: ComponentTypeDictionary, prefix: string) : ComponentTypeDictionary
-{
-    list.forEach((component, idx, dictionary) => {
-        dictionary[idx].type = typeof component.type == 'string' ? prefix + "/" + component.type : [ prefix, ...component.type ]
-    })
-    return list
+
+function withPrefix(list: ComponentTypeDictionary, prefix: string) : ComponentTypeDictionary {
+    const clone = list.map((entry) => ({ ...entry }))
+    return prefixDictionaryEntries(clone, prefix)
 }

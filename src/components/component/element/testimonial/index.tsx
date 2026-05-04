@@ -1,8 +1,7 @@
 import { CmsImage } from '@/components/shared/cms_image';
 import { type TestimonialElementDataFragment, TestimonialElementDataFragmentDoc } from '@/gql/graphql';
 import { CmsComponent } from '@remkoj/optimizely-cms-react';
-import { RichText } from '@remkoj/optimizely-cms-react';
-import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc';
+import { CmsEditable, RichText } from '@remkoj/optimizely-cms-react/rsc';
 import 'server-only';
 
 export const TestimonialElement: CmsComponent<TestimonialElementDataFragment> = ({
@@ -12,7 +11,7 @@ export const TestimonialElement: CmsComponent<TestimonialElementDataFragment> = 
 }) => {
   return (
     <div className="tw-w-full tw-bg-blue tw-text-white">
-      <CmsEditable as="figure" className="testimonial tw-mx-auto tw-max-w-[640px] tw-py-3xl tw-leading-2xl" cmsId={key}>
+      <CmsEditable as="figure" ctx={ctx} className="testimonial tw-mx-auto tw-max-w-[640px] tw-py-3xl tw-leading-2xl" cmsId={key}>
         <RichText
           as="blockquote"
           text={referenceText?.json}

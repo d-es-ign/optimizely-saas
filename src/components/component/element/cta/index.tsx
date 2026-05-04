@@ -8,12 +8,12 @@ import type { CTALayoutProps } from './types'
 import { isAnimatedTemplate, AnimatedCTAElement } from './animated_cta'
 import { DefaultCTAElement } from "./default_cta"
 
-export const CTAElement : CmsComponent<CTAElementDataFragment, CTALayoutProps> = ({ data, layoutProps, contentLink }) =>
+export const CTAElement : CmsComponent<CTAElementDataFragment, CTALayoutProps> = ({ data, layoutProps, contentLink, ctx }) =>
 {
     if (isAnimatedTemplate(layoutProps)) {
-        return <CmsEditable as={ AnimatedCTAElement } data={ data } layoutProps={ layoutProps } cmsId={ contentLink.key } />
+        return <CmsEditable as={ AnimatedCTAElement } ctx={ctx} data={ data } layoutProps={ layoutProps } cmsId={ contentLink.key } />
     }
-    return <CmsEditable as={ DefaultCTAElement } data={ data } layoutProps={layoutProps} cmsId={ contentLink.key } />
+    return <CmsEditable as={ DefaultCTAElement } ctx={ctx} data={ data } layoutProps={layoutProps} cmsId={ contentLink.key } />
 }
 CTAElement.getDataFragment = ()=>[ "CTAElementData", CTAElementDataFragmentDoc ]
 

@@ -11,7 +11,7 @@ import { getLabel } from '@/labels';
 import { getSdk } from '@/sdk';
 import { CmsContentLink } from '@remkoj/optimizely-cms-nextjs/components';
 import { type CmsComponent } from '@remkoj/optimizely-cms-react';
-import { RichText } from '@remkoj/optimizely-cms-react';
+import { RichText } from '@remkoj/optimizely-cms-react/rsc';
 import 'server-only';
 
 export const ArticleListElement: CmsComponent<ArticleListElementDataFragment> = async ({

@@ -1,6 +1,7 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import type CardRowLayoutProps from './card.row.opti-style.json'
-import { extractSettings, type LayoutProps } from "@remkoj/optimizely-cms-react"
+import { type LayoutProps } from "@remkoj/optimizely-cms-react"
+import { extractSettings } from '@remkoj/optimizely-cms-react/rsc'
 import Card from '@/components/shared/Card'
 
 export const CardRow : CmsLayoutComponent<LayoutProps<typeof CardRowLayoutProps>> = ({ layoutProps, children }) => {

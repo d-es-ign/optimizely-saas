@@ -8,10 +8,11 @@ import DefaultRow from './row/default-row'
 import CarouselRow from './row/carousel-row'
 import { prefixDictionaryEntries } from "@/components/utils"
 
-prefixDictionaryEntries(elements, "Element")
+const elementAliases = withPrefix(elements, 'Element')
 
 export const ComponentModuleList : ComponentTypeDictionary = [
     ...elements,
+    ...elementAliases,
     ...blocks,
     {
         type: "Node",
@@ -36,3 +37,8 @@ export const ComponentModuleList : ComponentTypeDictionary = [
 ]
 
 export default ComponentModuleList
+
+function withPrefix(list: ComponentTypeDictionary, prefix: string) : ComponentTypeDictionary {
+    const clone = list.map((entry) => ({ ...entry }))
+    return prefixDictionaryEntries(clone, prefix)
+}

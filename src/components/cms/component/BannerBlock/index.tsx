@@ -12,6 +12,7 @@ import { CmsEditable, CmsComponent } from "@remkoj/optimizely-cms-react/rsc";
 export const BannerBlockComponent: CmsComponent<BannerBlockDataFragment> = ({
   data: { Title, Image: image },
   inEditMode,
+  ctx,
 }) => {
   const imageData = {
     altText: "Banner image alt text",
@@ -28,6 +29,7 @@ export const BannerBlockComponent: CmsComponent<BannerBlockDataFragment> = ({
         {(Title || inEditMode) && (
           <CmsEditable
             as="h1"
+            ctx={ctx}
             className="tw-text-xl tw-my-[20px] tw-z-10 tw-text-white tw-font-serif tw-text-4xl md:tw-text-7xl xl:tw-text-8xl"
             cmsFieldName="CardHeading"
           >

@@ -7,8 +7,8 @@
   "scripts": {
     "dev:http": "yarn next dev -p 3002",
     "dev": "yarn next dev --experimental-https -p 3002",
-    "build": "yarn next build && yarn opti-graph webhook:create",
-    "build:full": "yarn graphql-codegen && yarn next build && yarn opti-graph webhook:create",
+    "build": "yarn next build && node -e \"const { execSync } = require('node:child_process'); const required = ['OPTIMIZELY_GRAPH_APP_KEY', 'OPTIMIZELY_GRAPH_SECRET', 'OPTIMIZELY_GRAPH_SINGLE_KEY', 'OPTIMIZELY_PUBLISH_TOKEN']; if (required.every((key) => process.env[key])) execSync('yarn opti-graph webhook:create', { stdio: 'inherit' });\"",
+    "build:full": "yarn graphql-codegen && yarn next build && node -e \"const { execSync } = require('node:child_process'); const required = ['OPTIMIZELY_GRAPH_APP_KEY', 'OPTIMIZELY_GRAPH_SECRET', 'OPTIMIZELY_GRAPH_SINGLE_KEY', 'OPTIMIZELY_PUBLISH_TOKEN']; if (required.every((key) => process.env[key])) execSync('yarn opti-graph webhook:create', { stdio: 'inherit' });\"",
     "start": "next start",
     "start:local": "next start -p 3002",
     "lint": "next lint",

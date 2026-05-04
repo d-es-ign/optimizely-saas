@@ -3,8 +3,7 @@ import { ArticleGroupPageDataFragmentDoc, type ArticleGroupPageDataFragment } fr
 import { getArticles } from "./api";
 import { CmsImage } from "@/components/shared/cms_image";
 import { Button } from "@/components/shared/button";
-import { RichText } from "@remkoj/optimizely-cms-react";
-import { CmsEditable, CmsContentArea } from "@remkoj/optimizely-cms-react/rsc";
+import { CmsEditable, CmsContentArea, RichText } from "@remkoj/optimizely-cms-react/rsc";
 import { getLabel } from "@/labels";
 import { linkDataToUrl } from '@/components/shared/cms_link'
 import { Card, type ColorOptions } from '@/components/shared/Card'
@@ -21,12 +20,12 @@ export const ArticleGroupPagePage : CmsComponent<ArticleGroupPageDataFragment> =
         <div className="mx-auto container">
             <div className="py-[32pt]">
                 <div className="max-w-prose text-center mb-[32pt] mx-auto">
-                    <CmsEditable as="h1" cmsFieldName="articleGroupTitle" className="text-[48pt] font-bold">
+                    <CmsEditable as="h1" ctx={ ctx } cmsFieldName="articleGroupTitle" className="text-[48pt] font-bold">
                         { data.articleGroupTitle ?? ''}
                     </CmsEditable>
                 </div>
-                <CmsEditable as={ RichText } text={ data.articleGroupIntro?.json } cmsFieldName="articleGroupIntro" ctx={ ctx } className="prose mx-auto" />
-                <CmsContentArea items={ data.MainContent } fieldName="MainContent" className="w-full mt-[32pt]" />
+                <CmsEditable as={ RichText } text={ data.articleGroupIntro?.json } cmsFieldName="articleGroupIntro" ctx={ ctx } forwardCtx className="prose mx-auto" />
+                <CmsContentArea ctx={ ctx } items={ data.MainContent } fieldName="MainContent" className="w-full mt-[32pt]" />
             </div>
             <div className="columns-1 md:columns-1 lg:columns-2 xl:columns-3 gap-8 mb-[24pt]">
             { articles.items.map((item, idx) => {

@@ -1,7 +1,6 @@
 import { CardBlockDataFragmentDoc, type CardBlockDataFragment, type ButtonBlockPropertyDataFragment, type ButtonBlockDataFragment } from "@/gql/graphql";
 import Image from '@/components/shared/cms_image'
-import { CmsEditable, CmsComponent } from "@remkoj/optimizely-cms-react/rsc";
-import { RichText } from "@remkoj/optimizely-cms-react";
+import { CmsEditable, CmsComponent, RichText } from "@remkoj/optimizely-cms-react/rsc";
 import AnimatedImage from "./motion";
 import ButtonBlock from '@/components/component/block/button_block'
 
@@ -9,7 +8,7 @@ import ButtonBlock from '@/components/component/block/button_block'
  * Card Component
  * Reusable card component
  */
-export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data: { layout: imageLayout = "before", image, heading = "", subheading = "", description = {json: null}, color = "blue", link: button, icon }, inEditMode, ctx }) => {
+export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data: { layout: imageLayout = "before", image, heading = "", subheading = "", description = {json: null}, color = "blue", link: button, icon }, inEditMode, ctx, contentLink }) => {
     const additionalClasses: string[] = [];
     const innerClasses: string[] = [];
     const buttonClasses : string[] = [];
@@ -58,19 +57,19 @@ export const CardBlockComponent : CmsComponent<CardBlockDataFragment> = ({ data:
     <div className="tw-flex tw-justify-center tw-w-full tw-flex-col lg:tw-flex-row">
         <div className={`tw-h-auto tw-flex tw-flex-col lg:tw-max-w-[30%] tw-mr-[48px] ${innerClasses.join(" ")} dark:!text-ghost-white dark:prose-h3:text-ghost-white dark:prose-h2:text-ghost-white`}>
             <div>
-            { (icon || inEditMode) && <CmsEditable as={Image} cmsFieldName="CardIcon" src={ icon } alt={""} width={48} height={48} /> }
-            { (heading || inEditMode) && <CmsEditable as="h2" className="tw-text-xl tw-my-[20px]" cmsFieldName="CardHeading">{ heading }</CmsEditable> }
-            { (subheading || inEditMode) && <CmsEditable as="h3" className="tw-text-l tw-my-[20px]" cmsFieldName="CardSubHeading">{ subheading }</CmsEditable> }
+            { (icon || inEditMode) && <CmsEditable as={Image} ctx={ctx} cmsFieldName="CardIcon" src={ icon } alt={""} width={48} height={48} /> }
+            { (heading || inEditMode) && <CmsEditable as="h2" ctx={ctx} className="tw-text-xl tw-my-[20px]" cmsFieldName="CardHeading">{ heading }</CmsEditable> }
+            { (subheading || inEditMode) && <CmsEditable as="h3" ctx={ctx} className="tw-text-l tw-my-[20px]" cmsFieldName="CardSubHeading">{ subheading }</CmsEditable> }
             </div>
-            { (description || inEditMode) && <CmsEditable as={RichText} ctx={ctx} className="tw-text-sm" cmsFieldName="CardDescription" text={ description?.json } /> }
-            { button && <CmsEditable as={ButtonBlock} cmsFieldName="CardButton" contentLink={{ key: null }} data={{
+            { (description || inEditMode) && <CmsEditable as={RichText} ctx={ctx} forwardCtx className="tw-text-sm" cmsFieldName="CardDescription" text={ description?.json } /> }
+            { button && <CmsEditable as={ButtonBlock} ctx={ctx} cmsFieldName="CardButton" contentLink={contentLink} data={{
                 ...button,
                 __typename: undefined,          // Remove data type, so only data fields will be matched
                 ' $fragmentName': undefined,    // Remove fragment source, so only data fields will be matched
                 className: `${ (button as ButtonBlockPropertyDataFragment | undefined | null)?.className ?? '' } ${ buttonClasses.join(' ')}`.trim() || undefined // Apply additional classes
             }} /> }
         </div>
-        { (image || inEditMode) && <AnimatedImage imageLayout={ imageLayout }><CmsEditable as={Image} cmsFieldName="CardImage" className="rounded-[40px] w-full" src={ image } alt={""} width={660} height={440} /></AnimatedImage> }
+        { (image || inEditMode) && <AnimatedImage imageLayout={ imageLayout }><CmsEditable as={Image} ctx={ctx} cmsFieldName="CardImage" className="rounded-[40px] w-full" src={ image } alt={""} width={660} height={440} /></AnimatedImage> }
     </div>
 </section>);
 }

@@ -54,3 +54,4 @@ certificates
 
 .env.backup
 .env.local
+.vercel

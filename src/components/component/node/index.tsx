@@ -1,7 +1,7 @@
 import { type CmsLayoutComponent } from "@remkoj/optimizely-cms-react"
 import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
 
-export const VisualBuilderNode : CmsLayoutComponent = ({ contentLink, layoutProps, children }) =>
+export const VisualBuilderNode : CmsLayoutComponent = ({ contentLink, layoutProps, children, ctx }) =>
 {
     let className = ''
     switch (layoutProps?.layoutType ?? '') {
@@ -22,7 +22,7 @@ export const VisualBuilderNode : CmsLayoutComponent = ({ contentLink, layoutProp
             break;
     }
     if (layoutProps && layoutProps.layoutType == "grid")
-        return <CmsEditable as="div" className={ className } cmsId={ contentLink.key }>{ children }</CmsEditable>
+        return <CmsEditable as="div" ctx={ctx} className={ className } cmsId={ contentLink.key }>{ children }</CmsEditable>
     return <div className={ className }>{ children }</div>
 }
 
